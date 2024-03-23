@@ -1,13 +1,907 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* background-color: black;
+    color: #fff; */
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --White: #fff;
+    --input-color: #f1f2f6;
+    --login-btn: #6c5ce7;
+    --red: red;
+    --black: #2d3436;
+    --gray: #dfe6e9;
+}
+
+html {
+    font-size: 16px;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    /* Adjust the width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Optional: Change the background color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Optional: Change the color of the scrollbar handle */
+    border-radius: 5px;
+    /* Optional: Add rounded corners to the scrollbar handle */
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow-y: inherit;
+    overflow-x: hidden;
+    scrollbar-width: 10px;
+    -ms-overflow-style: 10px;
+
+}
+
+
+/* login form  */
+.login {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 90%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    user-select: none;
+
+
+
+
+}
+
+.login-form-2 {
+    width: 90%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    user-select: none;
+    filter: blur(3px)
+}
+
+.login-form h2,
+.login-form-2 h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+
+}
+
+#username,
+#conform-password,
+#new-password {
+    border: none;
+    margin-bottom: 30px;
+    height: 50px;
+    background-color: var(--input-color);
+    padding: 0 10px;
+    border-radius: 5px;
+
+
+
+}
+
+#password {
+    border: none;
+    height: 50px;
+    background-color: var(--input-color);
+
+    padding: 0 10px;
+    border-radius: 5px;
+
+
+}
+
+#username,
+#password,
+#conform-password,
+#new-password:focus {
+    outline: none;
+}
+
+#username,
+#password,
+#conform-password,
+#new-password::placeholder {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.yyy::placeholder {
+    color: red;
+}
+
+.alam1 {
+    position: absolute;
+    top: 128px;
+
+    color: var(--red);
+    font-weight: 600;
+
+}
+
+.alam2 {
+    position: absolute;
+    top: 208px;
+
+    color: var(--red);
+    font-weight: 600;
+
+}
+
+.login-form .login-btn,
+.login-form-2 .login-btn,
+.update-btn {
+    border: none;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: var(--login-btn);
+    color: var(--White);
+}
+
+.login-form .forgot,
+.login-form-2 .forgot {
+    width: 100%;
+    text-align: end;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 10px;
+    /* font-size: 0.9rem; */
+}
+
+.signup {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+
+}
+
+.signup-btn {
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: var(--login-btn);
+    color: var(--White);
+    margin-top: 44px;
+
+}
+
+.login-form a {
+    text-decoration: none;
+
+
+}
+
+.message {
+    position: absolute;
+    top: 10%;
+    font-weight: 600;
+    width: fit-content;
+
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--black);
+    color: var(--White);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+/* reset password-------------------------------------------------------------------------------------------------------------------------  */
+
+.human-check-box {
+    min-width: 300px;
+    min-height: 300px;
+    background-color: var(--input-color);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+
+
+
+
+}
+
+.human-check-box-2 {
+    min-width: 300px;
+    min-height: 300px;
+    background-color: var(--input-color);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+
+
+
+
+}
+
+.human-check-box h2,
+.human-check-box-2 h2 {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 900;
+
+}
+
+.human-check-box p,
+.human-check-box-2 p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.human-check-box input,
+.human-check-box-2 input {
+    border: none;
+    border-radius: 5px;
+    padding: 0 5px;
+    height: 30px;
+}
+
+.human-check-box input:focus,
+.human-check-box-2 input:focus {
+    outline: none;
+}
+
+.human-check-box button,
+.human-check-box-2 button {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--login-btn);
+    color: var(--White);
+    width: 100px;
+    margin-top: 10px;
+    font-weight: 600;
+
+}
+
+.Alert {
+    outline: 1px solid red;
+}
+
+/* updatepassword--------------------------------------------------------------------------------- */
+.alam3 {
+    position: absolute;
+    top: 155px;
+    color: var(--red);
+    font-weight: 600;
+
+
+
+}
+
+.alam4 {
+    position: absolute;
+    top: 235px;
+    color: var(--red);
+    font-weight: 600;
+}
+
+/* Profileedit-form-------------------------------------------------------------------------------------- */
+.Profileedit-form {
+    max-width: 700px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+
+
+}
+
+.Profileedit-form input,
+.Profileedit-form select {
+    margin-bottom: 30px;
+    height: 40px;
+
+    border: none;
+    border-bottom: 2px solid;
+
+    padding: 0 10px;
+}
+
+.Profileedit-form input:focus {
+    outline: none;
+}
+
+.heading {
+
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.box-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+
+}
+
+.img-box {
+
+    width: 100px;
+    height: 100px;
+    background-color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    display: none;
+
+}
+
+.image-lable {
+    font-weight: 600;
+    margin-top: 5px;
+    cursor: pointer;
+
+}
+
+#Username-lable,
+#name-lable,
+#bio-lable,
+#genter {
+    font-weight: 600;
+}
+
+.Profileedit-form button {
+    border: none;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: var(--login-btn);
+    color: var(--White);
+}
+
+
+.Profileedit-form select {
+    /* Style for the select element */
+    width: 200px;
+    padding: 10px;
+
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+
+}
+
+.Profileedit-form select option {
+    /* Style for the options */
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    width: 400px;
+}
+
+/* Hover effect for options */
+.Profileedit-form select option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Selected option style */
+.Profileedit-form select option:checked {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+}
+
+.Profileedit-form select :checked {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+}
+
+
+/* home-------------------------------------------------------------------------------------------------------- */
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+
+
+}
+
+header {
+    width: 100%;
+    height: 30px;
+    position: sticky;
+    top: 0%;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6c5ce7;
+    z-index: 100;
+}
+
+header .notify-icon {
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+
+}
+
+header .notify-icon a {
+
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: var(--black);
+    padding-right: 5px;
+}
+
+header h3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10px;
+
+    margin: 0;
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+
+/* feed */
+.feed {
+    /* max-width: 700px; */
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 5px;
+}
+
+
+
+.article {
+    width: 100%;
+    /* height: 600px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    padding-bottom: 5px;
+}
+
+.article .box-1 {
+    width: 100%;
+    /* height: 100px; */
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    /* background-color: red; */
+
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.article .box-2 {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+.article .box-2 .name {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+
+}
+
+.article .content {
+    width: 100%;
+    min-height: 10px;
+    max-height: 30px;
+    /* background-color: #6c5ce7; */
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.article .content p {
+    margin: 0%;
+    padding: 0 10px;
+}
+
+.article .post-img img {
+
+    max-width: auto;
+    min-width: 300px;
+    /* max-height: auto;
+    min-height: 400px; */
+    aspect-ratio: 1;
+    background-color: #6c5ce7;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+.article .post-img {
+    display: flex;
+    /* justify-content: center; */
+
+}
+
+.article .btn-group {
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    /* height: 40px; */
+    gap: 5px;
+}
+
+.article .btn-group button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    padding: 5px 0px;
+
+}
+
+
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    height: 30px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--White);
+
+
+}
+
+footer a {
+    color: var(--White);
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2d3436;
+
+}
+
+footer button {
+    border: none;
+    font-size: 25px;
+    margin: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* status */
+.search {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.custom-add-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--White);
+    font-weight: 300;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    background-color: #6c5ce7;
+}
+
+
+/* videos */
+.videos {
+
+    width: 100%;
+    height: 100%;
+}
+
+/* add post */
+.addpost {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+
+}
+
+.article-2 {
+    padding: 10px;
+}
+
+.article-box-1 {
+    width: 100%;
+    /* height: 100px; */
+    padding: 0px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.content {}
+
+#post-content {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--input-color);
+}
+
+#post-content:focus {
+    outline: none;
+}
+
+#photo {
+    display: none;
+}
+
+.post-img {
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    display: flex;
+    /* background-color: #6c5ce7; */
+
+
+}
+
+.post-img .photo {
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    background-color: #888;
+    font-size: 2rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* popep-btn */
+.popep-btn {
+
+    border-radius: 5px;
+    background-color: var(--White);
+
+    position: fixed;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid;
+    bottom: -100px;
+
+
+
+}
+
+.popep-btn h2 {
+    font-weight: 600;
+    margin: 0;
+
+}
+
+.popep-btn button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    line-height: 30px;
+    background-color: var(--gray);
+    font-size: 1.4rem;
+}
+
+.popep-btn a {
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--black);
+    font-size: 1.2rem;
+}
+
+/* profile */
+.profile {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* status */
+.status {
+    width: 100%;
+    height: 200px;
+    align-self: self-start;
+    border-bottom: 3px solid #b2bec3;
+    border-top: 3px solid #b2bec3;
+    padding: 5px;
+    display: flex;
+
+    align-items: center;
+    gap: 5px;
+}
+
+.create-status {
+    width: 100px;
+    height: 100%;
+
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+    border: 1px solid #b2bec3;
+}
+
+.create-status .box-1 {
+    width: 100%;
+    height: 100%;
+
+}
+
+.create-status .box-2 {
+    width: 100%;
+    height: 50%;
+
+    position: relative;
+    display: flex;
+    align-items: end;
+
+}
+
+.create-status .box-2 p {
+    width: 100%;
+    margin: 0%;
+    text-align: center;
+
+}
+
+.status-icon {
+
+
+    position: absolute;
+    top: -15px;
+    left: 35px;
+
+
+
+}
+
+.icon-profile {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--White);
+    background-color: #333;
+
 }
