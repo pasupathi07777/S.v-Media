@@ -1,29 +1,60 @@
 import React from 'react'
-// import { CiCirclePlus } from "react-icons/ci";
-import {Link } from 'react-router-dom'
+import { useContext } from 'react'
+import Contex from '../Details/Contex'
+import { Link } from 'react-router-dom'
+
+
 
 const Status = () => {
+  let { fun5, urlconvert, updatestatus } = useContext(Contex)
+
+
   return (
     <div className="status">
-      <Link to={'addstatus'}>
-      <div className="create-status">
-        <div className="box-1">
-          <img src='' alt="" />
-        </div>
-        <div className="box-2">
-          <p>Add story</p>
-          <div className="status-icon">
-            <div className="custom-add-icon">
-              +
+
+      <div className="btn">
+        <button className="create-status" onClick={fun5}>
+
+          <label htmlFor="status-post">
+            <input type="file" id='status-post'  onChange={(e) => urlconvert(e)} />
+            <div className="box-1">
+              <img src='' alt="" />
             </div>
-            {/* <CiCirclePlus /> */}
-          </div>
-        </div>
+            <div className="box-2">
+              <p>Add story</p>
+              <div className="status-icon">
+                <div className="custom-add-icon">
+                  +
+                </div>
+
+              </div>
+            </div>
+          </label>
 
 
 
-      </div></Link>
+        </button>
+      </div>
+
       <div className="post-status">
+
+        {updatestatus.length?updatestatus.map(statu =>
+         <Link to={`status/${statu.id}`}><main className='each-post' key={statu.id}>
+
+           
+         <img src={`${statu.image}`} alt="" />
+         {/* <video  src={`${statu.image}`} ></video> */}
+
+
+       </main></Link>):<p></p>
+
+
+          
+
+
+
+        }
+
 
 
       </div>

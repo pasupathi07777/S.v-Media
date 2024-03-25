@@ -17,6 +17,8 @@ import Profile from './Components/Profile'
 import Popbtn from './Components/Popbtn';
 import Addpostvideo from './Components/Addpostvideo';
 import Addstatus from './Components/Addstatus';
+import Clikedpost from './Components/Clikedpost';
+import Clickstatus from './Components/Clickstatus';
 let login = true
 
 function App() {
@@ -38,24 +40,26 @@ function App() {
             <Route path='Profileedit' element={<Profileedit />} />
             <Route path='Home' element={<Home />} />
             <Route path='search' element={<Search />} />
-            
+
             <Route path='video' element={<Video />} />
             <Route path='profile' element={<Profile />} />
             <Route path='addpost' element={<Addpost />} />
-            <Route path='addvideo' element={<Addpostvideo/>} />
-            <Route path='/home/addstatus' element={<Addstatus/>} />``
-            
+            <Route path='addvideo' element={<Addpostvideo />} />
+            <Route path='/home/addstatus' element={<Addstatus />} />
+            <Route path='/home/:id' element={<Clikedpost />} />
+            <Route path='home/status/:id' element={<Clickstatus/>} />
+
 
           </Route>
-         
-          <Route path='*' element={<Addstatus/>} />
-          
+
+          <Route path='*' element={<Addstatus />} />
+
 
 
 
 
         </Routes>
-        <Popbtn/>
+        <Popbtn />
         {login && <Footer />}
 
       </Dataprovider>

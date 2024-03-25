@@ -56,7 +56,7 @@ html {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     position: relative;
     overflow-y: inherit;
@@ -484,14 +484,28 @@ html {
 /* home-------------------------------------------------------------------------------------------------------- */
 .home {
     width: 100%;
+  
+
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    /* justify-content: start; */
     gap: 10px;
+    /* overflow-y: scroll; */
 
 
 
 }
+.home-1{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: start; */
+    gap: 10px;
+    /* overflow-y: scroll; */}
 
 header {
     width: 100%;
@@ -521,7 +535,8 @@ header .notify-icon a {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: end;
+    /* justify-content: end; */
+    margin-left: auto;
     color: var(--black);
     padding-right: 5px;
 }
@@ -531,7 +546,7 @@ header h3 {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    /* justify-content: start; */
     padding-left: 10px;
 
     margin: 0;
@@ -546,10 +561,11 @@ header h3 {
     /* max-width: 700px; */
     width: 100%;
     height: 100%;
+ 
     padding: 0 5px;
     display: flex;
     flex-direction: column;
-    align-self: center;
+
     gap: 5px;
 }
 
@@ -564,6 +580,24 @@ header h3 {
     border-radius: 5px;
     border: 1px solid #b2bec3;
     padding-bottom: 5px;
+  
+}
+.article a{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    padding: 10px;
+    
+    
+    
+}
+.article a img{
+ width: 100%;
+ height: 100%;
+ border-radius: 5px;
+ background-color: #333;
+
+
 }
 
 .article .box-1 {
@@ -612,18 +646,7 @@ header h3 {
     padding: 0 10px;
 }
 
-.article .post-img img {
 
-    max-width: auto;
-    min-width: 300px;
-    /* max-height: auto;
-    min-height: 400px; */
-    aspect-ratio: 1;
-    background-color: #6c5ce7;
-    margin: 10px;
-    border-radius: 5px;
-
-}
 
 .article .post-img {
     display: flex;
@@ -632,11 +655,13 @@ header h3 {
 }
 
 .article .btn-group {
-    padding: 5px;
+    padding:0  5px;
     display: flex;
     width: 100%;
     /* height: 40px; */
     gap: 5px;
+    margin-top: 5px;
+  
 }
 
 .article .btn-group button {
@@ -657,7 +682,7 @@ header h3 {
 footer {
     width: 100%;
     height: 30px;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     display: flex;
@@ -726,12 +751,22 @@ footer button {
 /* add post */
 .addpost {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 5px;
+  
+
+}
+.addpost button{
+    border: none;
+    
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    margin-top: 5px;
 
 }
 
@@ -745,16 +780,20 @@ footer button {
     padding: 0px;
     display: flex;
     gap: 10px;
+    margin-bottom: 5px;
 
 }
 
-.content {}
+
 
 #post-content {
     width: 100%;
+    /* min-height: 20px; */
+    max-height: 100px;
     padding: 10px;
     border: none;
     background-color: var(--input-color);
+    border-radius: 5px 5px;
 }
 
 #post-content:focus {
@@ -775,6 +814,10 @@ footer button {
 
 }
 
+.date {
+    font-size: 0.8rem;
+}
+
 .post-img .photo {
     width: 100%;
     min-height: 200px;
@@ -785,6 +828,7 @@ footer button {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0px 0 5px 5px;
 }
 
 
@@ -794,12 +838,13 @@ footer button {
 
     border-radius: 5px;
     background-color: var(--White);
+    height: 50px;
 
     position: fixed;
     display: flex;
-    gap: 20px;
-    padding: 10px;
-    border: 1px solid;
+    gap: 15px;
+    /* padding: 10px; */
+
     bottom: -100px;
 
 
@@ -820,14 +865,27 @@ footer button {
     line-height: 30px;
     background-color: var(--gray);
     font-size: 1.4rem;
+
 }
 
 .popep-btn a {
     text-transform: capitalize;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--black);
+    font-size: 1rem;
+}
+
+#status-post {
+    display: none;
+}
+
+.popep-btn .btn {
+    padding: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 50px;
     font-size: 1.2rem;
 }
 
@@ -840,32 +898,59 @@ footer button {
 
 /* status */
 .status {
+   
+    min-height: 200px;
     width: 100%;
-    height: 200px;
-    align-self: self-start;
+   
+ 
     border-bottom: 3px solid #b2bec3;
     border-top: 3px solid #b2bec3;
     padding: 5px;
     display: flex;
+ 
+   
 
     align-items: center;
     gap: 5px;
+    margin: 0;
+    /* overflow: hidden; */
 }
+.status .btn{
+    width: 100px;
+    /* height: 200px; */
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+
 
 .create-status {
     width: 100px;
     height: 100%;
+ 
+
+    
 
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+    ;
     background-color: var(--White);
     border: 1px solid #b2bec3;
+}
+
+.create-status label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
 }
 
 .create-status .box-1 {
     width: 100%;
     height: 100%;
+    background-color: #888;
+
 
 }
 
@@ -875,7 +960,9 @@ footer button {
 
     position: relative;
     display: flex;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
+
 
 }
 
@@ -905,3 +992,170 @@ footer button {
     background-color: #333;
 
 }
+.post-status{
+   
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    /* overflow-x: scroll; */
+    display: flex;
+}
+.each-post{
+    width: 100px;
+    min-width: 100px;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+.each-post img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  
+}
+
+/* Add status */
+.Addstatus {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.Addstatus .status-img-box {
+    width: 300px;
+
+   height: 300px;
+
+    background-color:var(--black);
+    border-radius: 5px 5px 0 0;
+    /* margin-bottom: 5px; */
+    object-fit: cover;
+
+
+}
+.Addstatus .status-img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.Addstatus textarea{
+    min-width: 300px;
+
+    min-height: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    
+
+}
+.Addstatus textarea:focus{
+    outline: none;
+}
+.Addstatus button{
+    border: none;
+    
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+}
+
+/* click-status */
+.click-status{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--black);  */
+}
+.click-status img{
+    width: 90%;
+    height: 90%;
+    background-color: #888;
+    border-radius: 5px;
+}
+
+/* clickpost */
+.clickpost{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+   /* flex-direction: column; */
+    justify-content:center;
+    align-items: center;
+}
+.clickpost .article{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+
+}
+.clickpost .article .post-img{
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+.clickpost .article .box-3 .content{
+    margin-bottom: 10px;
+   
+
+}
+.clickpost .article .post-img img{
+    width: 100%;
+    height: 100%;
+
+    /* overflow: hidden; */
+
+}
+
+
+/* Search */
+.search{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+   
+   
+
+}
+.search input{
+    width: 100%;
+    height: 40px ;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: var(--input-color);
+    border: none;
+    border: 1px solid   ;
+    margin-bottom: 10px;
+}
+.search input:focus{
+    outline: none;
+
+}
+.search .feed{
+    padding: 0;
+}
+
+
+
+@media(min-width:600px) {}

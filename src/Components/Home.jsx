@@ -7,9 +7,10 @@ import Contex from '../Details/Contex'
 
 
 const Home = () => {
-  let {addbtn}=useContext(Contex)
-  return (
-    <div className="home" style={addbtn===true?{backfaceVisibility:5}:{}}>
+  let {feed }=useContext(Contex)
+  return(
+     <div className={feed.lengtn?'home-1':'home-1'}>
+     
       
       <Status />
       <Feed/>

@@ -1,15 +1,19 @@
-import React from 'react'
+
 import { useContext } from 'react'
 import Contex from '../Details/Contex'
 import { AiOutlineLike } from "react-icons/ai";
 import { LiaCommentSolid } from "react-icons/lia";
 import { FaShare } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Feed = () => {
-  let { items } = useContext(Contex)
+  let { signupResponce,feed } = useContext(Contex)
+ 
+
+
   return (
-    <div className="feed">
-      {items.length ? items.map(item =>
+    <div className="feed">  
+      {feed.length ? feed.map(item =>
         <article className='article' key={item.id}>
           <div className="box-1">
             <div className="profile-image">
@@ -17,7 +21,7 @@ const Feed = () => {
             </div>
             <div className="box-2">
               <div className="name">
-                {item.name}
+                {signupResponce.name}
 
               </div>
               <div className="date">
@@ -27,12 +31,18 @@ const Feed = () => {
             </div>
           </div>
           <div className="content">
-            <p>{item.content}</p>
+            <p>{item.text}</p>
 
           </div>
-          <div className="post-img">
-            <img src={item.image} alt="" />
-          </div>
+        
+          
+          
+          <Link to={`${item.id}`}> <div className="post-img">
+            
+           
+          {item.image && <img src={item.image}  alt="Uploaded" />}
+          </div></Link>
+         
           <div className="btn-group">
             <button><AiOutlineLike />
             </button>
