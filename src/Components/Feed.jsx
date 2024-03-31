@@ -30,18 +30,20 @@ const Feed = () => {
               </div>
             </div>
           </div>
-          <div className="content">
+          {item.text && <div className="content">
             <p>{item.text}</p>
 
-          </div>
+          </div>}
+          
 
 
 
-          <Link to={`${item.id}`}> <div className="post-img">
-
-
+          <Link to={`${item.id}`}>
+            {/* <div className="post-img">
+             
+            </div> */}
             {item.image && <img src={item.image} alt="Uploaded" />}
-          </div></Link>
+          </Link>
 
           <div className="btn-group">
             <button><AiOutlineLike />

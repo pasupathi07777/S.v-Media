@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+
 import { FaHome } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import {Link, Outlet} from 'react-router-dom'
+import { Outlet} from 'react-router-dom'
 import { FaRegPlusSquare } from "react-icons/fa";
-import { PiVideoFill } from "react-icons/pi";
+
 import { useContext } from 'react';
 import Contex from '../Details/Contex';
 import { useHistory } from 'react-router-use-history';
-import { IoIosNotifications } from "react-icons/io";
-<div className="notify-icon">
 
-</div>
+import { FaHeart } from "react-icons/fa";
+
 
 const Footer = () => {
  
@@ -42,7 +41,7 @@ const Footer = () => {
   }
   return (
     <>
-    {Login==true && <footer>
+    {Login===true && <footer>
         {/* <Link to={'/'}><FaHome /></Link> */}
         <div className="a" onClick={(e)=>{Home(); setaddbtn(false);}}><FaHome /></div>
         <div className="a" onClick={(e)=>{search(); setaddbtn(false);}}><FaSearch /></div>
@@ -50,7 +49,7 @@ const Footer = () => {
       
         <p  onClick={footerSumit}><FaRegPlusSquare /></p>
         {/* <div className="a" ><FaSearch /></div> */}
-        <div className="a"   onClick={(e)=>{video(); setaddbtn(false);}}><IoIosNotifications /></div>
+        <div className="a"   onClick={(e)=>{video(); setaddbtn(false);}}><FaHeart /></div>
         <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}> <div className="icon-profile"></div></div>
         
 

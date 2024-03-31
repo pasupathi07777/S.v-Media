@@ -168,16 +168,11 @@ export let Dataprovider = ({ children }) => {
 
     let [Bio, setBio] = useState("")
     let [Genter, setGenter] = useState("")
+    let [potfolio,setpotfolio] =useState([])
+    console.log(potfolio)
 
 
-    // post ariticle
-
-    let items = [
-
-        { id: 1, date: format(new Date(), "MM,yyy,ddd,pp"), name: "pasupathi", content: "i am a developer", image: "" },
-        { id: 2, date: format(new Date(), "MM,yyy,ddd,pp"), name: "raja", content: "i am a ui/uz desiner", image: "" },
-        { id: 3, date: format(new Date(), "MM,yyy,ddd,pp"), name: "vinith", content: "i am a endinear", image: "" }
-    ]
+   
 
     // footer
     let [addbtn, setaddbtn] = useState(false)
@@ -217,7 +212,7 @@ export let Dataprovider = ({ children }) => {
 
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         let id = (Responce.length) ? Responce.length + 1 : 1
-        localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText }]));
+        localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText ,message:`${signupResponce.name} Add New Status`}]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         setupdatestatus(Responce_3)
         setstatuspost("")
@@ -243,7 +238,7 @@ export let Dataprovider = ({ children }) => {
         e.preventDefault()
         let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         let id = (Responce_1.length) ? Responce_1.length + 1 : 1
-        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp") }]));
+        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp") ,message:`${signupResponce.name} Add New post`}]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         setpostText("")
@@ -255,41 +250,66 @@ export let Dataprovider = ({ children }) => {
 
     }
 
-    function backlogin() {
-        history.push('Login')
-    }
+    // function backlogin() {
+    //     history.push('Login')
+    // }
+
+    // function tt() {
+        
+    //     let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
+    //     if (log_sign_responce.user === true) {
+
+    //         backhome()
+    //         console.log("/")
+    //         history.push('/')
+
+
+
+    //     } else if (log_sign_responce.user === false) {
+
+
+    //         backlogin()
+    //         history.push('Login')
+
+    //     }
+    // }
     useEffect(() => {
-        Login && tt()
+        // Login && tt()
+        let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
+        if (log_sign_responce.user === true) {
+
+            // backhome()
+            // console.log("/")
+            history.push('/')
 
 
 
-        function tt() {
-            let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
-            if (log_sign_responce.user === true) {
-
-                backhome()
-                console.log("/")
+        } else if (log_sign_responce.user === false) {
 
 
+            // backlogin()
+            history.push('Login')
 
-            } else if (log_sign_responce.user === false) {
-
-
-                backlogin('Login')
-
-            }
         }
+       
 
-    }, [Login,backlogin])
-
-
-
-
+        
+      
 
 
-    function loginpage() {
-        history.push('Login')
-    }
+
+        
+
+    }, [Login,history])
+
+
+
+
+
+
+    // function loginpage() {
+    //     history.push('Login')
+    // }
 
 
     // local server
@@ -303,12 +323,15 @@ export let Dataprovider = ({ children }) => {
         setupdatestatus(Responce_3)
 
         setfeed(Responce_4)
-
         let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
 
-        log_sign_responce.user === true && backhome()
-        log_sign_responce.user === false && loginpage()
+        log_sign_responce.user === true && history.push('/')//backhome()
+        log_sign_responce.user === false && history.push('Login') //loginpage()
         log_sign_responce.user === true && setLogin(log_sign_responce.user)
+
+       
+
+        
 
 
 
@@ -340,9 +363,9 @@ export let Dataprovider = ({ children }) => {
             loginUsername, setloginUsername, loginPassword, setloginPassword, loginSumit, usernameError, setusernameError,
             passwordError, setpasswordError, message, setmessage, SignuppasswordError, setSignuppasswordError,//setSignupError
             // -------------profile edit
-            profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,
-            // posts feed
-            items,
+            profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setpotfolio,
+            
+            
             // footer 
             addbtn, setaddbtn,
             // popepbtn

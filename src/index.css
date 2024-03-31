@@ -527,9 +527,9 @@ html {
 header {
     width: 100%;
     height: 30px;
-    position: sticky;
+    /* position: sticky;
     top: 0%;
-    left: 0;
+    left: 0; */
 
     display: flex;
     justify-content: space-between;
@@ -590,9 +590,11 @@ header h3 {
 
 .article {
     width: 100%;
-   min-height: 500px;
-    display: flex;
-    flex-direction: column;
+   /* min-height: 400px; */
+   height: fit-content;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: space-between; */
     align-items: center;
     border-radius: 5px;
     border: 1px solid #b2bec3;
@@ -601,55 +603,48 @@ header h3 {
 }
 .article a{
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    aspect-ratio: 1;
+   
     border-radius: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     
     
     
 }
-.article a .post-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
-    overflow: h;
+.article a img{
+width: 100%;
 
-}
-.article a  .post-img  img{
-/* min-width: 350px;
-max-width: 500px; */
-width: 300px;
-aspect-ratio: 1;
+object-fit: contain;
 
- border-radius: 5px;
- background-color: #333;
+
+ /* border-radius: 5px; */
+
 
 
 }
 
 .article .box-1 {
     width: 100%;
-    /* height: 100px; */
+    
     padding: 5px;
     display: flex;
+    align-items: center;
     gap: 10px;
-    /* background-color: red; */
+   
 
 }
 
 .profile-image {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: black;
+    
 }
 
 .article .box-2 {
@@ -701,7 +696,7 @@ aspect-ratio: 1;
     border: none;
     border-radius: 30px;
     font-size: 24px;
-    padding: 5px 0px;
+    /* padding: 5px 0px; */
 
 }
 
@@ -744,7 +739,7 @@ footer p {
 
 
 
-/* status */
+/* search---------------------------------------------------------------------------------------------------------------------------- */
 .search {
     width: 100%;
     height: 100%;
@@ -765,7 +760,7 @@ footer p {
 }
 
 
-/* videos */
+/* videos ---------------------------------------------------------------------------------------------------------------------*/
 .videos {
 
     width: 100%;
@@ -871,11 +866,11 @@ footer p {
 
 
 
-/* popep-btn */
+/* popep-btn------------------------------------------------------------------------------------------------------------------------------ */
 .popep-btn {
 
     border-radius: 5px;
-    background-color: var(--White);
+ 
     height: 50px;
 
     position: fixed;
@@ -927,14 +922,14 @@ footer p {
     font-size: 1.2rem;
 }
 
-/* profile */
+/* profile ------------------------------------------------------------------------------------------------------*/
 .profile {
     width: 100%;
     height: 100%;
 
 }
 
-/* status */
+/* status-------------------------------------------------------------------------------------------------------------------------- */
 .status {
    
     min-height: 200px;
@@ -1035,7 +1030,8 @@ footer p {
     width: 100%;
     height: 100%;
     gap: 5px;
-    /* overflow-x: scroll; */
+    overflow-x: scroll;
+    scrollbar-width: none;
     display: flex;
 }
 .each-post{
@@ -1056,7 +1052,7 @@ footer p {
   
 }
 
-/* Add status */
+/* Add status------------------------------------------------------------------------------------------------------------------------ */
 .Addstatus {
     width: 100%;
     height: 100%;
@@ -1123,7 +1119,7 @@ footer p {
     border-radius: 5px;
 }
 
-/* clickpost */
+/* clickpost------------------------------------------------------------------------------------------------------------------------------- */
 .clickpost{
     width: 100%;
     height: 100%;
@@ -1150,11 +1146,7 @@ footer p {
     overflow: hidden;
 
 }
-.clickpost .article .box-3 .content{
-    margin-bottom: 10px;
-   
 
-}
 .clickpost .article .post-img img{
     width: 100%;
     height: 100%;
@@ -1164,17 +1156,26 @@ footer p {
 }
 
 
-/* Search */
+/* Search --------------------------------------------------------------------------------------------------------------------------------*/
 .search{
     width: 100%;
     height: 100%;
     /* padding: 10px; */
     display: flex;
     flex-direction: column;
-    padding: 10px 5px;
+    padding: 0 5px;
+    position: relative;
     
    
    
+
+}
+.search .input{
+    position: sticky;
+    top: 0px;
+    padding:  10px;
+    background-color: var(--White);
+    margin: 0;
 
 }
 .search input{
@@ -1186,6 +1187,8 @@ footer p {
     border: none;
     border: 1px solid   ;
     margin-bottom: 10px;
+    margin: 0;
+   
 }
 .search input:focus{
     outline: none;
@@ -1197,7 +1200,7 @@ footer p {
 
 
 
-/* profile page */
+/* profile page----------------------------------------------------------------------------------------------------------------------- */
 .profile{
     width: 100%;
     height: 100%;
@@ -1231,11 +1234,13 @@ footer p {
    
    align-items: center;
    justify-content: center;
-   /* color: var(--White); */
+  
    font-weight: 600;
+   overflow: hidden;
 }
-.profile-photo .photo-box p{
-    margin: 0;
+.profile-photo .photo-box img{
+    width: 100%;
+    height: 100%;
 }
 .profile-details{
     width: 100%;
@@ -1252,7 +1257,7 @@ footer p {
     flex-direction: column;
     
 
-    /* justify-content: space-between; */
+
     
 }
 .form-box label{
@@ -1267,7 +1272,7 @@ footer p {
     border-radius: 5px;
     padding: 0 10px;
     display: flex;
-    /* justify-content: center; */
+ 
     align-items: center;
 }
 .form-box .box p{
@@ -1303,6 +1308,28 @@ footer p {
     font-weight: 600;
     border: 3px solid var(--input-color);
     color: var(--red);
+}
+
+/* notification-------------------------------------------------------------------------------------------------------------------- */
+.notification{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
+    
+}
+.notification .box{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--gray);
+    border-radius: 5px;
+}
+.notification .box p{
+    padding: 2px 5px;
+   margin: 0;
 }
 
 

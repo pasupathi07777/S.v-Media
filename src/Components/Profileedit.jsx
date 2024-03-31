@@ -5,7 +5,7 @@ import Contex from '../Details/Contex'
 const Profileedit = () => {
 
 
-    let { profileImage, setprofileImage, Name, setName, sigupname, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin } = useContext(Contex)
+    let { profileImage, setprofileImage, Name, setName, sigupname, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin, setpotfolio} = useContext(Contex)
 
     let setprofileImg = (e) => {
         setprofileImage(URL.createObjectURL(e[0]))
@@ -19,6 +19,12 @@ const Profileedit = () => {
         setLogin(true)
         // His.push('/')
     }
+    function potfolio_details(){
+        let user_potfolio=localStorage.getItem("pasupathi_media")
+        setpotfolio(user_potfolio)
+
+
+    }
 
 
 
@@ -30,8 +36,9 @@ const Profileedit = () => {
         e.preventDefault()
 
         localStorage.setItem("pasupathi_media", JSON.stringify([{ ...signupResponce, user_name: userName, name: Name, profileimage: profileImage, bio: Bio, Genter: Genter }]));
-
+        
         History()
+        potfolio_details()
 
     }
 
