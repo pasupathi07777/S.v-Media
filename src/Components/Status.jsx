@@ -39,7 +39,7 @@ const Status = () => {
       <div className="post-status">
 
         {updatestatus.length?updatestatus.map(statu =>
-         <Link to={`status/${statu.id}`}><main className='each-post' key={statu.id}>
+         <Link to={`status/${statu.id}` } key={statu.id}><main className='each-post' key={statu.id}>
 
            
          <img src={`${statu.image}`} alt="" />

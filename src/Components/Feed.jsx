@@ -7,12 +7,12 @@ import { FaShare } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Feed = () => {
-  let { signupResponce,feed } = useContext(Contex)
- 
+  let { signupResponce, feed } = useContext(Contex)
+
 
 
   return (
-    <div className="feed">  
+    <div className="feed">
       {feed.length ? feed.map(item =>
         <article className='article' key={item.id}>
           <div className="box-1">
@@ -34,15 +34,15 @@ const Feed = () => {
             <p>{item.text}</p>
 
           </div>
-        
-          
-          
+
+
+
           <Link to={`${item.id}`}> <div className="post-img">
-            
-           
-          {item.image && <img src={item.image}  alt="Uploaded" />}
+
+
+            {item.image && <img src={item.image} alt="Uploaded" />}
           </div></Link>
-         
+
           <div className="btn-group">
             <button><AiOutlineLike />
             </button>

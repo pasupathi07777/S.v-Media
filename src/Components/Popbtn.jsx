@@ -23,10 +23,10 @@ const Popbtn = () => {
 
   },[statuspost])
  
-  let fun3 = () => {
-    Root.push('addvideo')
+  // let fun3 = () => {
+  //   Root.push('addvideo')
 
-  }
+  // }
   return (
     <main className='popep-btn' style={addbtn === true ? { bottom: 50 } : {}}>
 
@@ -35,7 +35,7 @@ const Popbtn = () => {
       <label htmlFor="status-post"><FaBookOpen /></label>
       <input type="file" name="" onChange={(e)=>{urlconvert(e.target.files)}} id="status-post" />
        </button> Status</div>
-      <div className="btn"><button type="submit" onClick={(e) =>  { fun3() ; setaddbtn(false); }}><FaVideo /> </button> Video</div>
+      {/* <div className="btn"><button type="submit" onClick={(e) =>  { fun3() ; setaddbtn(false); }}><FaVideo /> </button> Video</div> */}
 
 
 

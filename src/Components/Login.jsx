@@ -68,7 +68,7 @@ const Login = () => {
                 <p className='forgot' onClick={()=>setforgot(true)}> Forgot?</p>
 
                 <button type="submit" className='login-btn'>LOGIN</button>
-                <Link to={'/signup'}> <p className='signup'>SIGNUP</p> </Link>
+                <Link to={'signup'}> <p className='signup'>SIGNUP</p> </Link>
 
             </form>
             <form action="" className={(forgot===true)?'human-check-box-2':"human-check-box " }  onSubmit={passreset}  >

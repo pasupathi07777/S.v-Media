@@ -1,9 +1,17 @@
 import React from 'react'
 
+
 const Profile = () => {
+  let proimg = ""
   return (
     <div className="profile">
-      <h2>profile</h2>
+
+
+      
+
+
+
+
 
     </div>
   )

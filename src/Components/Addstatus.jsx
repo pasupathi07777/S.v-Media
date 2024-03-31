@@ -16,7 +16,7 @@ const Addstatus = () => {
       <textarea name="" id="" className='status-textarea' onChange={(e) => setstatusText(e.target.value)} placeholder='What On Your Mind'></textarea>
       <button type="submit">Uplode Status</button>
 
-
+ 
 
     </form>
   )

@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Contex from '../Details/Contex'
+import Header from './Header'
+import Footer from './Footer'
 
 
 const Search = () => {
@@ -10,6 +12,7 @@ const Search = () => {
   console.log()
   return (
     <div className="search">
+   
       <div className="input">
       <input type="text" onChange={(e)=>setsearchinput(e.target.value)} placeholder='Search' />
       </div>
@@ -60,6 +63,7 @@ const Search = () => {
 
 
     </div>
+    {/* <Footer/> */}
       
     </div>
   )

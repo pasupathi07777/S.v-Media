@@ -7,40 +7,68 @@ import { format } from 'date-fns'
 
 
 
+
 let Contex = createContext({})
 
 
 export let Dataprovider = ({ children }) => {
 
+    // login logout contyrol
 
+    let [Login, setLogin] = useState(false)
+
+
+    // Rooting
+    const history = useHistory()
 
     // signup --------------------------------------------------------------------------------------
     let [sigupname, setsigupname] = useState("")
     let [sigupPassword, setsigupPassword] = useState("")
     let [signupResponce, setsignupResponce] = useState("")
     let [SignupError, setSignupError] = useState("")
-    let [SignupResult, setSignupResult] = useState("")
-    console.log(SignupResult)
+    let [SignuppasswordError, setSignuppasswordError] = useState("")
 
-    const history = useHistory()
-
+    // let [SignupResult, setSignupResult] = useState("")
 
 
     function fun1() {
+        let Username_validation = (sigupname.length === 10) ? true : false
+        let Userpassword_validation = (sigupPassword.length > 8) ? true : false
+        let SignupResult = Username_validation === true && Userpassword_validation === true
+        console.log(SignupResult)
+        Username_validation === false && setSignupError("Enter Valid Number")
+        Userpassword_validation === false && setSignuppasswordError("8-20 chracters")
 
-        localStorage.setItem("pasupathi_media", JSON.stringify([{ mobilenumber: sigupname, password: sigupPassword }]));
-        let Responce = JSON.parse(localStorage.getItem("pasupathi_media"))
-        Responce.forEach(a => (
-
-            setsignupResponce(a)
-
-        ))
-
+        SignupResult===true && localStorage.setItem("pasupathi_media", JSON.stringify([{ mobile_number: sigupname, password: sigupPassword }]))
+        SignupResult ===true && Page()
         function Page() {
+            let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
+            log_sign_responce.user = true
+            console.log(log_sign_responce)
+            localStorage.setItem("pasupathi_media_login", JSON.stringify(log_sign_responce))
+            
             history.push('Profileedit')
+            setSignupError("")
+            setSignuppasswordError("")
+
+
+
+
         }
-        Page()
+        if (SignupResult) {
+            let Responce = JSON.parse(localStorage.getItem("pasupathi_media"))
+            Responce.forEach(a => (
+
+
+                setsignupResponce(a)
+
+            ))
+        }
+
         return true
+
+        // localStorage.setItem("pasupathi_media", JSON.stringify([{ mobile_number: sigupname, password: sigupPassword }]));
+
 
     }
     function fun22() {
@@ -52,22 +80,34 @@ export let Dataprovider = ({ children }) => {
 
     let handlesumitSignup = (e) => {
         e.preventDefault()
-        if (sigupPassword === '') {
+        if (sigupPassword === "" && sigupname === "") {
+
+            setSignuppasswordError("Required")
+            setSignupError("Required")
             return
+
+
+
+        } else if (sigupname === "") {
+            setSignupError("Required")
+            return
+        } else if (sigupPassword === "") {
+            setSignuppasswordError("Required")
+            return
+
         }
-        let Result = (signupResponce === null) ? fun1() : fun22()
-        setSignupResult(Result)
+        signupResponce === null ? fun1() : fun22()
+
         setsigupname("")
         setsigupPassword("")
 
 
 
     }
-    // Login -------------------------------------
+    // Login ------------------------------------------------------------------------------------------------------------------
 
     let [loginUsername, setloginUsername] = useState("")
     let [loginPassword, setloginPassword] = useState("")
-    // let [loginError, setloginError] = useState("")
     let [usernameError, setusernameError] = useState("")
     let [passwordError, setpasswordError] = useState("")
     function fun3() {
@@ -75,27 +115,39 @@ export let Dataprovider = ({ children }) => {
 
 
     }
+    function Page() {
+
+
+        let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
+        log_sign_responce.user = true
+        console.log(log_sign_responce)
+        localStorage.setItem("pasupathi_media_login", JSON.stringify(log_sign_responce))
+        setLogin(true)
+
+        console.log(log_sign_responce)
+        console.log(Login)
+    }
     function fun4() {
 
 
-        function Page() {
-            history.push('Home')
-        }
-        let username = (signupResponce.mobilenumber === loginUsername)
-        let password = signupResponce.password === loginPassword
-        username === true && password === false && setpasswordError("Incorrect password")
 
-        username === false && password === true && setusernameError("Incorrect Username")
-            (username === false && password === false) && setusernameError("Incorrect Username")
-                (username === true && password === true) && Page()
+        let username = signupResponce.mobile_number === loginUsername
+        let password = signupResponce.password === loginPassword
+
+        username === true && password === false && setpasswordError("Incorrect password")
+        username === false && password === true && setusernameError("Incorrect Number")
+        username === false && password === false && setusernameError("Incorrect Number")
+        loginUsername.length < 10 && setusernameError("Enter 10 Dgits")
+        username === true && password === true && Page()
     }
 
     function loginSumit(e) {
         e.preventDefault()
         if (loginPassword === '') {
+            setusernameError("Enter Username")
+            setpasswordError("Enter password")
             return
         }
-
         signupResponce === null && fun3()
         signupResponce && fun4()
         setloginUsername("")
@@ -138,19 +190,22 @@ export let Dataprovider = ({ children }) => {
         statuspost !== "" && Root.push('addstatus')
     }
 
-    // img url conveter 
+   
+    
+
+    //   poststatus
+    let [statusText, setstatusText] = useState("")
+    let [updatestatus, setupdatestatus] = useState([])
+    
+     // img url conveter 
     function urlconvert(e) {
         setstatuspost(URL.createObjectURL(e.target.files[0]))
 
 
     }
 
-    //   poststatus
-    let [statusText, setstatusText] = useState("")
-    let [updatestatus, setupdatestatus] = useState([])
-
     function backhome() {
-        history.push('home')
+        history.push('/')
 
 
     }
@@ -159,8 +214,7 @@ export let Dataprovider = ({ children }) => {
         e.preventDefault()
 
 
-        // let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
-        // { !Responce_1 && localStorage.setItem("pasupathi_media_status", JSON.stringify([])); }
+
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         let id = (Responce.length) ? Responce.length + 1 : 1
         localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText }]));
@@ -179,7 +233,7 @@ export let Dataprovider = ({ children }) => {
     // post 
 
     let [postText, setpostText] = useState("")
-    let [postimage, setpostimage] = useState(null)
+    let [postimage, setpostimage] = useState("")
 
 
 
@@ -193,7 +247,7 @@ export let Dataprovider = ({ children }) => {
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         setpostText("")
-        setpostimage(null)
+        setpostimage("")
 
         backhome()
 
@@ -201,45 +255,90 @@ export let Dataprovider = ({ children }) => {
 
     }
 
+    function backlogin() {
+        history.push('Login')
+    }
+    useEffect(() => {
+        Login && tt()
+
+
+
+        function tt() {
+            let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
+            if (log_sign_responce.user === true) {
+
+                backhome()
+                console.log("/")
+
+
+
+            } else if (log_sign_responce.user === false) {
+
+
+                backlogin('Login')
+
+            }
+        }
+
+    }, [Login,backlogin])
 
 
 
 
 
 
+    function loginpage() {
+        history.push('Login')
+    }
 
 
     // local server
     useEffect(() => {
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media"))
+        Responce && Responce.forEach(a => (
+            setsignupResponce(a)
+        ))
         let Responce_3 = (JSON.parse(localStorage.getItem("pasupathi_media_status")) == null) ? localStorage.setItem("pasupathi_media_status", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_media_status"))
         let Responce_4 = (JSON.parse(localStorage.getItem("pasupathi_media_posts")) == null) ? localStorage.setItem("pasupathi_media_posts", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setupdatestatus(Responce_3)
 
         setfeed(Responce_4)
 
+        let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
+
+        log_sign_responce.user === true && backhome()
+        log_sign_responce.user === false && loginpage()
+        log_sign_responce.user === true && setLogin(log_sign_responce.user)
 
 
 
-        Responce && Responce.forEach(a => (
-
-            setsignupResponce(a)
 
 
-        ))
+
+
+
+
 
 
         !Responce && setsignupResponce(Responce)
 
 
-    }, [message])
+    }, [message, Login])
+
+
+ 
+
+
 
 
     return (
         <Contex.Provider value={{
+            // Login
+            Login,setLogin,
+
             sigupname, setsigupname, sigupPassword, setsigupPassword, handlesumitSignup, SignupError, setSignupError,
             loginUsername, setloginUsername, loginPassword, setloginPassword, loginSumit, usernameError, setusernameError,
-            passwordError, setpasswordError, message, setmessage,
+            passwordError, setpasswordError, message, setmessage, SignuppasswordError, setSignuppasswordError,//setSignupError
             // -------------profile edit
             profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,
             // posts feed
@@ -253,7 +352,7 @@ export let Dataprovider = ({ children }) => {
             // post status
             statusText, setstatusText, update, updatestatus,
             // post 
-            setpostText, setpostimage, sumitpost, feed
+            setpostText, setpostimage, sumitpost, feed,postimage
 
 
 
