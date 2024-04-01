@@ -18,6 +18,7 @@ import Addpostvideo from './Components/Addpostvideo';
 import Addstatus from './Components/Addstatus';
 import Clikedpost from './Components/Clikedpost';
 import Clickstatus from './Components/Clickstatus';
+import { Editprofile } from './Components/Editprofile';
 
 
 
@@ -51,6 +52,7 @@ function App() {
               <Route path='/addstatus' element={<Addstatus />} />
               <Route path='/:id' element={<Clikedpost />} />
               <Route path='/status/:id' element={<Clickstatus />} />
+              <Route path='/editprofile' element={<Editprofile/>}/>
               <Route path='*' element={<Addstatus />} />
             </Route>
 

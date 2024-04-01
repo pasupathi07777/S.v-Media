@@ -273,24 +273,25 @@ export let Dataprovider = ({ children }) => {
 
     //     }
     // }
-    useEffect(() => {
-        // Login && tt()
-        let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
-        if (log_sign_responce.user === true) {
+    // {log_sign_responce &&     }
+    // useEffect(() => {
+    //     // Login && tt()
+    //     let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login")) 
+    //     if (log_sign_responce.user === true) {
 
-            // backhome()
-            // console.log("/")
-            history.push('/')
-
-
-
-        } else if (log_sign_responce.user === false) {
+    //         // backhome()
+    //         // console.log("/")
+    //         history.push('/')
 
 
-            // backlogin()
-            history.push('Login')
 
-        }
+    //     } else if (log_sign_responce.user === false) {
+
+
+    //         // backlogin()
+    //         history.push('Login')
+
+    //     }
        
 
         
@@ -300,7 +301,8 @@ export let Dataprovider = ({ children }) => {
 
         
 
-    }, [Login,history])
+    // }, [Login,history])
+
 
 
 
@@ -328,6 +330,23 @@ export let Dataprovider = ({ children }) => {
         log_sign_responce.user === true && history.push('/')//backhome()
         log_sign_responce.user === false && history.push('Login') //loginpage()
         log_sign_responce.user === true && setLogin(log_sign_responce.user)
+
+        // let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login")) 
+        if (log_sign_responce.user === true) {
+
+            // backhome()
+            // console.log("/")
+            history.push('/')
+
+
+
+        } else if (log_sign_responce.user === false) {
+
+
+            // backlogin()
+            history.push('Login')
+
+        }
 
        
 

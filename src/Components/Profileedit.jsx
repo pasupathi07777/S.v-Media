@@ -56,10 +56,11 @@ const Profileedit = () => {
             <label htmlFor="bio" id='bio-lable'>Bio</label>
             <input type="text" id='bio' value={Bio} onChange={(e) => setBio(e.target.value)}  />
             <label htmlFor="Genter" id='genter'>Genter</label>
-            <select name="" id="genter-select" value={Genter} onChange={(e) => setGenter(e.target.value)}>
-                <option value="male">male</option>
-                <option value="Femail">Femail</option>
-                <option value="Trans">Trans</option>
+            <select name="" id="genter-select" onChange={(e) => setGenter(e.target.value)}>
+              
+                {/* <option value="Femail">Femail</option>
+                <option value="male" >male</option>
+                <option value="Trans">Trans</option> */}
             </select>
             <button type="submit">Save</button>
 
