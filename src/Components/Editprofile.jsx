@@ -4,11 +4,12 @@ import { useHistory } from 'react-router-use-history'
 
 
 export const Editprofile = () => {
+    let geb="mail"
     let history = useHistory()
     let [name, setname] = useState("")
     let [username, setusername] = useState("")
     let [bio, setbio] = useState("")
-    let [genter, setgenter] = useState("")
+    let [genter, setgenter] = useState("dd")
     let [profileimage, setprofileimage] = useState("")
     console.log(name)
     console.log(username)
@@ -29,7 +30,7 @@ export const Editprofile = () => {
         setname(result.name)
         setusername(result.user_name)
         setbio(result.bio)
-        setgenter(result.genter)
+        setgenter(result.genter="mail")
         setprofileimage(result.profileimage)
 
     }, [])
@@ -83,14 +84,14 @@ export const Editprofile = () => {
             <label htmlFor="bio" id='bio-lable'>Bio</label>
             <input type="text" id='bio' value={bio} onChange={(e) => setbio(e.target.value)} />
             <label htmlFor="Genter" id='genter'>Genter</label>
-            {/* <select name="" id="genter-select" value={genter} onChange={(e) => setgenter(e.target.value)} >
-                <option value="male">male</option>
+            <select name="" id="genter-select" value={genter} onChange={(e) => setgenter(e.target.value)} >
+                <option value="male" defaultValue>male</option>
                 <option value="Femail">Femail</option>
 
                 <option value="Trans">Trans</option>
-            </select> */}
+            </select>
             
-            <input type="text" id='Username' value={username} onClick={genterOption} />
+            {/* <input type="text" id='Username' value={username} onClick={genterOption} /> */}
             <button type="submit">Save</button>
 
 

@@ -1,5 +1,5 @@
 
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Contex from '../Details/Contex'
 import { AiOutlineLike } from "react-icons/ai";
 import { LiaCommentSolid } from "react-icons/lia";
@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 const Feed = () => {
   let { signupResponce, feed } = useContext(Contex)
+
+  useEffect(()=>{
+    
+  })
 
 
 
@@ -38,7 +42,7 @@ const Feed = () => {
 
 
 
-          <Link to={`${item.id}`}>
+          <Link to={`/${item.id}`}>
             {/* <div className="post-img">
              
             </div> */}
@@ -46,7 +50,7 @@ const Feed = () => {
           </Link>
 
           <div className="btn-group">
-            <button><AiOutlineLike />
+            <button ><AiOutlineLike />
             </button>
             <button><LiaCommentSolid /></button>
             <button><FaShare /></button>

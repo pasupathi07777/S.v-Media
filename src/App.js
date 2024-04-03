@@ -19,6 +19,8 @@ import Addstatus from './Components/Addstatus';
 import Clikedpost from './Components/Clikedpost';
 import Clickstatus from './Components/Clickstatus';
 import { Editprofile } from './Components/Editprofile';
+import { useState } from 'react';
+import Editpost from './Components/Editpost';
 
 
 
@@ -26,6 +28,10 @@ import { Editprofile } from './Components/Editprofile';
 
 function App() {
 
+  
+    // click post
+    let [editbox,seteditbox]=useState()
+    console.log(editbox)
   return (
     <div className="App">
       <Dataprovider>
@@ -50,8 +56,12 @@ function App() {
               <Route path='/addpost' element={<Addpost />} />
               <Route path='/addvideo' element={<Addpostvideo />} />
               <Route path='/addstatus' element={<Addstatus />} />
-              <Route path='/:id' element={<Clikedpost />} />
+              <Route path='/:id' element={<Clikedpost editbox={editbox} seteditbox={seteditbox} />} />
+              <Route path='/search/:id' element={<Clikedpost />} />
+              <Route path='/video/:id' element={<Clikedpost />} />
+              <Route path='/editpost/:id' element={<Editpost/>} />
               <Route path='/status/:id' element={<Clickstatus />} />
+              <Route path='/video/status/:id' element={<Clickstatus />} />
               <Route path='/editprofile' element={<Editprofile/>}/>
               <Route path='*' element={<Addstatus />} />
             </Route>

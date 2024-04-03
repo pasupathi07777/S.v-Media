@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import Contex from '../Details/Contex'
+import { Link } from 'react-router-dom'
 
 const Videos = () => {
   let {updatestatus, feed}=useContext(Contex)
@@ -9,13 +10,14 @@ const Videos = () => {
 
       {feed.map(a=>
         <div className="box">
-          <p>{a.message}</p>
+         <Link to={`/video/${a.id}`}> <p>{a.message}</p></Link>
         </div>
 
       )}
       {updatestatus.map(a=>
         <div className="box">
-          <p>{a.message}</p>
+          {/* <p>{a.message}</p> */}
+          <Link to={`/video/status/${a.id}`}> <p>{a.message}</p></Link>
         </div>
 
       )}

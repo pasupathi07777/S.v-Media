@@ -49,7 +49,7 @@ const Addpost = () => {
             <label htmlFor="photo" className='photo'>{postimage !==""? <img src={postimage} alt="" />:"Add Post"}</label>
             <input type="file" onChange={imgconveter} id="photo" />
           </div>
-          <button type="submit">Add post</button>
+          <button type="submit">Share</button>
 
         </article>
       </form>

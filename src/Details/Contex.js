@@ -39,14 +39,14 @@ export let Dataprovider = ({ children }) => {
         Username_validation === false && setSignupError("Enter Valid Number")
         Userpassword_validation === false && setSignuppasswordError("8-20 chracters")
 
-        SignupResult===true && localStorage.setItem("pasupathi_media", JSON.stringify([{ mobile_number: sigupname, password: sigupPassword }]))
-        SignupResult ===true && Page()
+        SignupResult === true && localStorage.setItem("pasupathi_media", JSON.stringify([{ mobile_number: sigupname, password: sigupPassword }]))
+        SignupResult === true && Page()
         function Page() {
             let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
             log_sign_responce.user = true
             console.log(log_sign_responce)
             localStorage.setItem("pasupathi_media_login", JSON.stringify(log_sign_responce))
-            
+
             history.push('Profileedit')
             setSignupError("")
             setSignuppasswordError("")
@@ -168,11 +168,11 @@ export let Dataprovider = ({ children }) => {
 
     let [Bio, setBio] = useState("")
     let [Genter, setGenter] = useState("")
-    let [potfolio,setpotfolio] =useState([])
+    let [potfolio, setpotfolio] = useState([])
     console.log(potfolio)
 
 
-   
+
 
     // footer
     let [addbtn, setaddbtn] = useState(false)
@@ -185,14 +185,14 @@ export let Dataprovider = ({ children }) => {
         statuspost !== "" && Root.push('addstatus')
     }
 
-   
-    
+
+
 
     //   poststatus
     let [statusText, setstatusText] = useState("")
     let [updatestatus, setupdatestatus] = useState([])
-    
-     // img url conveter 
+
+    // img url conveter 
     function urlconvert(e) {
         setstatuspost(URL.createObjectURL(e.target.files[0]))
 
@@ -212,7 +212,7 @@ export let Dataprovider = ({ children }) => {
 
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         let id = (Responce.length) ? Responce.length + 1 : 1
-        localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText ,message:`${signupResponce.name} Add New Status`}]));
+        localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText, message: `${signupResponce.name} Add New Status` }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         setupdatestatus(Responce_3)
         setstatuspost("")
@@ -230,6 +230,12 @@ export let Dataprovider = ({ children }) => {
     let [postText, setpostText] = useState("")
     let [postimage, setpostimage] = useState("")
 
+    // click post
+    let [Editposttext, setEditposttext] = useState("")
+    let [Editpostimage, setEditpostimage] = useState("")
+    let [Editpostupdate, setEditpostupdate] = useState(true)
+
+
 
 
     let [feed, setfeed] = useState([])
@@ -238,7 +244,7 @@ export let Dataprovider = ({ children }) => {
         e.preventDefault()
         let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         let id = (Responce_1.length) ? Responce_1.length + 1 : 1
-        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp") ,message:`${signupResponce.name} Add New post`}]));
+        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post` }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         setpostText("")
@@ -250,58 +256,6 @@ export let Dataprovider = ({ children }) => {
 
     }
 
-    // function backlogin() {
-    //     history.push('Login')
-    // }
-
-    // function tt() {
-        
-    //     let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login"))
-    //     if (log_sign_responce.user === true) {
-
-    //         backhome()
-    //         console.log("/")
-    //         history.push('/')
-
-
-
-    //     } else if (log_sign_responce.user === false) {
-
-
-    //         backlogin()
-    //         history.push('Login')
-
-    //     }
-    // }
-    // {log_sign_responce &&     }
-    // useEffect(() => {
-    //     // Login && tt()
-    //     let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login")) 
-    //     if (log_sign_responce.user === true) {
-
-    //         // backhome()
-    //         // console.log("/")
-    //         history.push('/')
-
-
-
-    //     } else if (log_sign_responce.user === false) {
-
-
-    //         // backlogin()
-    //         history.push('Login')
-
-    //     }
-       
-
-        
-      
-
-
-
-        
-
-    // }, [Login,history])
 
 
 
@@ -309,9 +263,8 @@ export let Dataprovider = ({ children }) => {
 
 
 
-    // function loginpage() {
-    //     history.push('Login')
-    // }
+
+
 
 
     // local server
@@ -325,6 +278,7 @@ export let Dataprovider = ({ children }) => {
         setupdatestatus(Responce_3)
 
         setfeed(Responce_4)
+        console.log(Responce_4)
         let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
 
         log_sign_responce.user === true && history.push('/')//backhome()
@@ -348,9 +302,9 @@ export let Dataprovider = ({ children }) => {
 
         }
 
-       
 
-        
+
+
 
 
 
@@ -365,10 +319,11 @@ export let Dataprovider = ({ children }) => {
         !Responce && setsignupResponce(Responce)
 
 
-    }, [message, Login])
+        // let [Editpostupdate,setEditpostupdate]=useState(true)
+    }, [message, Login ])
 
 
- 
+
 
 
 
@@ -376,15 +331,15 @@ export let Dataprovider = ({ children }) => {
     return (
         <Contex.Provider value={{
             // Login
-            Login,setLogin,
+            Login, setLogin,
 
             sigupname, setsigupname, sigupPassword, setsigupPassword, handlesumitSignup, SignupError, setSignupError,
             loginUsername, setloginUsername, loginPassword, setloginPassword, loginSumit, usernameError, setusernameError,
             passwordError, setpasswordError, message, setmessage, SignuppasswordError, setSignuppasswordError,//setSignupError
             // -------------profile edit
-            profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setpotfolio,
-            
-            
+            profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName, setpotfolio,
+
+
             // footer 
             addbtn, setaddbtn,
             // popepbtn
@@ -394,7 +349,13 @@ export let Dataprovider = ({ children }) => {
             // post status
             statusText, setstatusText, update, updatestatus,
             // post 
-            setpostText, setpostimage, sumitpost, feed,postimage
+            setpostText, setpostimage, sumitpost, feed, postimage,setfeed,
+            //clickpost 
+
+            //editpost
+
+            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,sumitpost,
+
 
 
 
