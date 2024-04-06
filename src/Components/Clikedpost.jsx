@@ -25,7 +25,7 @@ const Clikedpost = ({editbox,seteditbox}) => {
     // post=feed.find(a=>a.id===Number(id))
     tt()
 
-  },[feed])
+  },[feed,tt])
   console.log(post)
 
   let editbtn=()=>{
@@ -146,7 +146,7 @@ const Clikedpost = ({editbox,seteditbox}) => {
         </div>
 
         <div className="btn-group">
-          <button style={post.like==true ?{color:'blue'}:{}} onClick={()=>likebtn(Number(id))}><AiOutlineLike />
+          <button style={post.like===true ?{color:'blue'}:{}} onClick={()=>likebtn(Number(id))}><AiOutlineLike />
           </button>
           <button><LiaCommentSolid /></button>
           <button><FaShare /></button>

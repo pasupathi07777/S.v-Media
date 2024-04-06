@@ -11,7 +11,7 @@ const Updatepassword = () => {
 
 
   // let [passUpdatesucess,setpassUpdatesucess]=useState(false)
-  let [success, setsuccess] = useState()
+  let [ setsuccess] = useState()
   let [newPassword, setnewPassword] = useState("")
   let [confirmPassword, setconfirmPassword] = useState("")
   let [passError, setpassError] = useState("")

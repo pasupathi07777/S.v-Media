@@ -10,15 +10,26 @@ const Editpost = () => {
     let {id}=useParams()
     id=Number(id)
     let history=useHistory()
+
+    // ----
+    // let Responce=''
+    // let Result=Responce.filter((a)=>(a.id===id))
+          
+    //     Result.map(a=>
+    //         Final_Result=a)
+    //         console.log(Final_Result)
+    //       setEditpostimage(Final_Result.image)
+    //       setEditposttext(Final_Result.text)
+
+    
    
    
 
     useEffect(()=>{
-          let Responce =JSON.parse(localStorage.getItem('pasupathi_media_posts'))
+          let  Responce =JSON.parse(localStorage.getItem('pasupathi_media_posts'))
           console.log(Responce)
           console.log(id)
-        //   Responce.map((a)=>
-        //   Result=a)
+       
         let Result=Responce.filter((a)=>(a.id===id))
           
         Result.map(a=>
@@ -26,7 +37,7 @@ const Editpost = () => {
             console.log(Final_Result)
           setEditpostimage(Final_Result.image)
           setEditposttext(Final_Result.text)
-    },[])
+    })
 
     let crerateurl=(e)=>{
         let Res=URL.createObjectURL(e[0])

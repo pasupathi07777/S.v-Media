@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-use-history'
 
 const Profile = () => {
   let { setLogin } = useContext(Contex)
-  let [a, seta] = useState(JSON.parse(localStorage.getItem("pasupathi_media")))
+  let [a] = useState(JSON.parse(localStorage.getItem("pasupathi_media")))
   let histoey = useHistory()
 
   let logout = () => {

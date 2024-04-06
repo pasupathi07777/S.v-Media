@@ -43,7 +43,7 @@ const Login = () => {
         e.preventDefault()
     
 
-        let res=(Total === answer)?fun():setAlert(true)
+        Total === answer?fun():setAlert(true)
         console.log( Alert)
         
         setanswer('')

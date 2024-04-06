@@ -352,7 +352,7 @@ export let Dataprovider = ({ children }) => {
 
 
         // let [Editpostupdate,setEditpostupdate]=useState(true)
-    }, [message, Login ])
+    }, [message, Login,history ])
 
 
 
@@ -388,7 +388,7 @@ export let Dataprovider = ({ children }) => {
 
             //editpost
 
-            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,sumitpost,Editpostupdate,
+            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,Editpostupdate,
 
 
 
