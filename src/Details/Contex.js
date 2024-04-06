@@ -388,7 +388,7 @@ export let Dataprovider = ({ children }) => {
 
             //editpost
 
-            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,sumitpost,
+            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,sumitpost,Editpostupdate,
 
 
 

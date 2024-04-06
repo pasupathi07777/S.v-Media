@@ -1,4 +1,4 @@
-import Contex, { Dataprovider } from './Details/Contex';
+import  { Dataprovider } from './Details/Contex';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { Route, Routes } from 'react-router';

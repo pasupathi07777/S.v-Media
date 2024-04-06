@@ -15,8 +15,15 @@ const Clikedpost = ({editbox,seteditbox}) => {
   console.log(id)
   let post = feed.find(a=>a.id===Number(id))
 
-  useEffect(()=>{
+  let tt=()=>{
     post=feed.find(a=>a.id===Number(id))
+
+
+  }
+
+  useEffect(()=>{
+    // post=feed.find(a=>a.id===Number(id))
+    tt()
 
   },[feed])
   console.log(post)

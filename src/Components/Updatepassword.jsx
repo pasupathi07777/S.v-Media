@@ -7,7 +7,7 @@ import Contex from '../Details/Contex'
 
 const Updatepassword = () => {
 
-  let { message, setmessage } = useContext(Contex)
+  let {  setmessage } = useContext(Contex)
 
 
   // let [passUpdatesucess,setpassUpdatesucess]=useState(false)
