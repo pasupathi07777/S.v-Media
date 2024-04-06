@@ -9,14 +9,14 @@ const Videos = () => {
     <div className="notification">
 
       {feed.map(a=>
-        <div className="box">
+        <div className="box" key={a.id}>
          <Link to={`/video/${a.id}`}> <p>{a.message}</p></Link>
         </div>
 
       )}
       {updatestatus.map(a=>
         <div className="box">
-          {/* <p>{a.message}</p> */}
+        
           <Link to={`/video/status/${a.id}`}> <p>{a.message}</p></Link>
         </div>
 

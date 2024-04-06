@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { IoIosNotifications } from "react-icons/io";
 
-import { Link } from 'react-router-dom'
+
+
 import Contex from '../Details/Contex';
 
 

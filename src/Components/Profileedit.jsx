@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useHistory } from 'react-router-use-history'
+import React, { useContext } from 'react'
+// import { useHistory } from 'react-router-use-history'
 import Contex from '../Details/Contex'
 
 const Profileedit = () => {
 
 
-    let { profileImage, setprofileImage, Name, setName, sigupname, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin, setpotfolio} = useContext(Contex)
+    let { profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin, setpotfolio} = useContext(Contex)
 
     let setprofileImg = (e) => {
         setprofileImage(URL.createObjectURL(e[0]))
@@ -14,7 +14,7 @@ const Profileedit = () => {
 
     }
 
-    let His = useHistory()
+    // let His = useHistory()
     function History() {
         setLogin(true)
         // His.push('/')

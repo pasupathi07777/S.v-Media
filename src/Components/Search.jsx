@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Contex from '../Details/Contex'
-import Header from './Header'
-import Footer from './Footer'
+
 
 
 const Search = () => {

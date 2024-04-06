@@ -65,18 +65,19 @@ html {
     -ms-overflow-style: 10px; */
 
 }
-.Rout-Box{
+
+.Rout-Box {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
-     overflow-y: inherit;
+    overflow-y: inherit;
     overflow-x: hidden;
     scrollbar-width: 10px;
     -ms-overflow-style: 10px;
-   
+
     scrollbar-width: 1px;
 }
 
@@ -91,7 +92,7 @@ html {
 
 }
 
-.login-form{
+.login-form {
     width: 90%;
     height: 100%;
     max-width: 500px;
@@ -168,7 +169,7 @@ html {
 
 #new-password::placeholder {
     font-weight: 500;
-   text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .yyy::placeholder {
@@ -215,10 +216,10 @@ html {
     /* font-size: 0.9rem; */
 }
 
-.signup{
+.signup {
     width: 100%;
     height: 100%;
-  
+
     text-align: center;
     font-weight: 500;
     margin-top: 10px;
@@ -466,18 +467,19 @@ html {
 /* home-------------------------------------------------------------------------------------------------------- */
 .home {
     width: 100%;
-  
+
 
     display: flex;
     flex-direction: column;
-   
+
     gap: 10px;
- 
+
 
 
 
 }
-.home-1{
+
+.home-1 {
     width: 100%;
     height: 100%;
 
@@ -486,7 +488,8 @@ html {
     /* align-items: center; */
     /* justify-content: start; */
     gap: 10px;
-    /* overflow-y: scroll; */}
+    /* overflow-y: scroll; */
+}
 
 header {
     width: 100%;
@@ -542,7 +545,7 @@ header h3 {
     /* max-width: 700px; */
     width: 100%;
     height: 100%;
- 
+
     padding: 0 5px;
     display: flex;
     flex-direction: column;
@@ -554,8 +557,8 @@ header h3 {
 
 .article {
     width: 100%;
-   /* min-height: 400px; */
-   height: fit-content;
+    /* min-height: 400px; */
+    height: fit-content;
     /* display: flex;
     flex-direction: column; */
     /* justify-content: space-between; */
@@ -563,30 +566,31 @@ header h3 {
     border-radius: 5px;
     border: 1px solid #b2bec3;
     padding-bottom: 5px;
-  
+
 }
-.article a{
+
+.article a {
     width: 100%;
     height: fit-content;
-    
+
     display: flex;
     justify-content: center;
     /* align-items: center; */
-   
+
     border-radius: 5px;
     /* padding: 5px; */
-    
-    
-    
+
+
+
 }
 
-.article a img{
-width: 100%;
+.article a img {
+    width: 100%;
 
-object-fit: contain;
+    object-fit: contain;
 
 
- /* border-radius: 5px; */
+    /* border-radius: 5px; */
 
 
 
@@ -594,12 +598,12 @@ object-fit: contain;
 
 .article .box-1 {
     width: 100%;
-    
+
     padding: 5px;
     display: flex;
     align-items: center;
     gap: 10px;
-   
+
 
 }
 
@@ -608,7 +612,14 @@ object-fit: contain;
     height: 40px;
     border-radius: 50%;
     background-color: black;
-    
+    overflow: hidden;
+
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    background-color: #2d3436;
 }
 
 .article .box-2 {
@@ -625,19 +636,40 @@ object-fit: contain;
     font-size: 1.3rem;
 
 }
+.article a{
+    display: flex;
+    flex-direction: column;
+}
 
-.article .content {
+.article a .content {
     width: 100%;
-    min-height: 10px;
-    max-height: 30px;
+    height: fit-content;
+    /* max-height: 100px; */
+    /* min-height: 10px;
+    max-height: 30px; */
     /* background-color: #6c5ce7; */
     font-size: 1.2rem;
     font-weight: 400;
+  
+}
+.article a{
+    text-decoration: none;
+    color: var(--black);
 }
 
 .article .content p {
+    width: 100%;
+    text-overflow: inherit;
+    height: fit-content;
     margin: 0%;
-    padding: 0 10px;
+    padding: 0 5px;
+    margin-bottom: 1px;
+    text-rendering: geometricPrecision;
+}
+
+.article .content p small {
+    font-weight: 600;
+    color: blue;
 }
 
 
@@ -645,13 +677,13 @@ object-fit: contain;
 
 
 .article .btn-group {
-    padding:0  5px;
+    padding: 0 5px;
     display: flex;
     width: 100%;
     /* height: 40px; */
     gap: 5px;
     margin-top: 5px;
-  
+
 }
 
 .article .btn-group button {
@@ -740,20 +772,21 @@ footer p {
     align-items: center;
     gap: 20px;
     /* padding: 5px; */
-  
+
 
 }
-.addpost button{
+
+.addpost button {
     border: none;
-    
+
     border-radius: 5px;
     padding: 0px 10px;
     font-weight: 500;
     /* margin-top: 5px; */
     font-size: 1.2rem;
     background-color: var(--login-btn);
-    color:var(--black);
-   
+    color: var(--black);
+
 
 }
 
@@ -770,22 +803,23 @@ footer p {
     width: 100%;
     height: auto;
     height: 50px;
-    padding: 0px;line-height: auto;
+    padding: 0px;
+    line-height: auto;
     display: flex;
     gap: 10px;
-    /* margin-bottom: 5px; */
+
     margin-bottom: 5px;
-    /* line-height: 50px; */
-   
+
+
 
 }
-.article-box-1 .profile-image{
-   /* height: 100%; */
-   /* line-height: 50px; */
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: auto 0px;
+
+.article-box-1 .profile-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0px;
 }
 
 
@@ -793,15 +827,25 @@ footer p {
 
 #post-content {
     width: 100%;
-    height: fit-content;
-    min-height: 30px;
-    height: 100%;
+    height: auto;
+    min-height: 100PX;
+
+
+
     padding: 5px;
-    
-  
+    text-overflow: ellipsis;
+    text-overflow: inherit;
+
+
     border: none;
     background-color: var(--input-color);
     border-radius: 5px 5px;
+
+
+
+
+
+
 }
 
 #post-content:focus {
@@ -814,12 +858,12 @@ footer p {
 
 .post-img {
     width: 100%;
- 
+
     max-height: 200px;
     height: 100%;
     display: flex;
-   
-    overflow:hidden ;
+
+    overflow: hidden;
     object-fit: cover;
 
 
@@ -831,10 +875,10 @@ footer p {
 
 .post-img .photo {
     width: 100%;
-    
+
     min-height: 200px;
     height: 100%;
-    background-color:var(--black);
+    background-color: var(--black);
     font-size: 2rem;
     text-transform: capitalize;
     display: flex;
@@ -842,17 +886,18 @@ footer p {
     align-items: center;
     border-radius: 0px 0 5px 5px;
     border-radius: 5px;
-    
-   
+
+
     border: none;
     padding: 0;
     color: var(--White);
 }
-.post-img  img{
+
+.post-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-   
+
 }
 
 
@@ -862,25 +907,26 @@ footer p {
 .popep-btn {
 
     border-radius: 30px;
- 
+
     height: 50px;
 
     position: fixed;
     display: flex;
     /* flex-direction: column; */
     gap: 15px;
-   
+
 
     bottom: -100px;
     background-color: var(--black);
-    color:var(--White);
+    color: var(--White);
     padding: 0 10px;
 
 
 
 }
-.popep-btn .btn{
-    color:var(--White);
+
+.popep-btn .btn {
+    color: var(--White);
 }
 
 .popep-btn h2 {
@@ -897,7 +943,7 @@ footer p {
     line-height: 30px;
     background-color: var(--gray);
     font-size: 1.2rem;
- 
+
 
 }
 
@@ -908,7 +954,7 @@ footer p {
     font-size: 1rem;
     color: var(--black);
     font-size: 1rem;
-    color:var(--White);
+    color: var(--White);
 }
 
 #status-post {
@@ -932,26 +978,27 @@ footer p {
 
 /* status-------------------------------------------------------------------------------------------------------------------------- */
 .status {
-   
+
     min-height: 200px;
     width: 100%;
-   
- 
+
+
     border-bottom: 3px solid #b2bec3;
     border-top: 3px solid #b2bec3;
     padding: 5px;
     display: flex;
- 
-   
+
+
 
     align-items: center;
     gap: 5px;
     margin: 0;
-    /* overflow: hidden; */
+
 }
-.status .btn{
+
+.status .btn {
     width: 100px;
-    /* height: 200px; */
+
     height: 100%;
     padding: 0;
     margin: 0;
@@ -963,12 +1010,12 @@ footer p {
 .create-status {
     width: 100px;
     height: 100%;
- 
 
-    
+
+
 
     border-radius: 5px;
-    ;
+
     background-color: var(--White);
     border: 1px solid #b2bec3;
 }
@@ -1026,8 +1073,9 @@ footer p {
     background-color: #333;
 
 }
-.post-status{
-   
+
+.post-status {
+
     width: 100%;
     height: 100%;
     gap: 5px;
@@ -1035,23 +1083,25 @@ footer p {
     scrollbar-width: none;
     display: flex;
 }
-.each-post{
+
+.each-post {
     width: 100px;
     min-width: 100px;
     height: 100%;
     /* background-color: red; */
     display: flex;
-    
+
     border-radius: 5px;
     overflow: hidden;
     border: 1px solid var(--black);
 
 }
-.each-post img{
+
+.each-post img {
     width: 100%;
-  
+
     object-fit: contain;
-  
+
 }
 
 /* Add status------------------------------------------------------------------------------------------------------------------------ */
@@ -1069,45 +1119,68 @@ footer p {
 
 .Addstatus .status-img-box {
     /* width: 300px; */
+    width: 100%;
+    min-height: 200px;
 
-   /* height: 300px; */
-   max-height: 400px;
+    /* height: 300px; */
+    max-height: 400px;
 
-    background-color:var(--black);
+
+    background-color: var(--black);
     border-radius: 5px 5px 0 0;
     /* margin-bottom: 5px; */
     object-fit: cover;
 
 
+
 }
-.Addstatus .status-img-box img{
+
+.Addstatus .status-img-box img {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
     border-radius: 5px;
 }
-.Addstatus textarea{
+
+.Addstatus .status-img-box p {
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    color: var(--White);
+}
+
+.Addstatus label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Addstatus textarea {
     width: 100%;
     min-height: 50px;
     overflow-y: visible;
     padding: 5px;
     border-radius: 5px;
-    
+
 
 }
-.Addstatus textarea:focus{
+
+.Addstatus textarea:focus {
     outline: none;
 }
-.Addstatus button{
+
+.Addstatus button {
     border: none;
-    
+
     border-radius: 5px;
     padding: 5px;
     font-weight: 600;
 }
 
 /* click-status */
-.click-status{
+.click-status {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1115,69 +1188,74 @@ footer p {
     align-items: center;
     /* background-color: var(--black);  */
 }
-.click-status img{
-  width: 100%;
-  max-height: 80%;
+
+.click-status img {
+    width: 100%;
+    max-height: 80%;
     /* height: 90%;  */
     background-color: #888;
     border-radius: 5px;
 }
 
 /* clickpost------------------------------------------------------------------------------------------------------------------------------- */
-.clickpost{
+.clickpost {
     width: 100%;
     height: 100%;
     /* padding: 10px; */
     display: flex;
-   /* flex-direction: column; */
-    justify-content:center;
+    /* flex-direction: column; */
+    justify-content: center;
     align-items: center;
 }
-.clickpost .article{
+
+.clickpost .article {
     width: 100%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 
 }
-.clickpost .article  .box-3 {
-    
+
+.clickpost .article .box-3 {
+
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
     flex-direction: column;
 }
 
-.clickpost .article  .box-3 .post-img{
+.clickpost .article .box-3 .post-img {
     width: 100%;
     /* height: 100%; */
-    
- 
-   
 
 
- 
+
+
+
+
 
 }
-.clickpost .article .box-3 img{
+
+.clickpost .article .box-3 img {
     width: 100%;
-   
 
 
-    
+
+
     background-color: #6c5ce7;
 
 
- 
+
 
 }
-.edit-box{
+
+.edit-box {
     margin-left: auto;
     width: 10px;
     /* height: 20px; */
@@ -1187,41 +1265,50 @@ footer p {
     /* background-color: #6c5ce7; */
     color: #dfe6e9;
     cursor: pointer;
-     position: relative;
+    position: relative;
 }
-.clickpost .article .box-1 .edit-box .dot{
+
+.clickpost .article .box-1 .edit-box .dot {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background-color: var(--black);
-   
-}
-.clickpost .article .box-1 .edit-box .edit-optionbox{
-  position: absolute;
-  /* width: 100px; */
- 
 
-  right: 20px;
-  top: 20px;
- border-radius: 5px;
- display: flex;
- flex-direction: column;
- overflow: hidden;
- gap: 5px;
- display: none;
 }
-.clickpost .article .box-1 .edit-box .edit-optionbox button{
-   border: none;
-   font-weight: 600;
-   text-transform: capitalize;
-   border-radius: 5px;
-   outline: none;
-   background-color: var(--gray);padding: 2px 5px;
+
+.clickpost .article .box-1 .edit-box .edit-optionbox {
+    position: absolute;
+    /* width: 100px; */
+
+
+    right: 20px;
+    top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 5px;
+    display: none;
 }
+
+.clickpost .article .box-1 .edit-box .edit-optionbox button {
+    border: none;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--gray);
+    padding: 2px 5px;
+}
+
 .clickpost .article .box-3 .post-img {
     position: relative;
 }
-.clickpost .article .box-3 .post-img .Delete-option{
+.clickpost .article .box-3 .content {
+  width: 100%;
+}
+
+.clickpost .article .box-3 .post-img .Delete-option {
     width: 200px;
     /* height: 100px; */
     position: absolute;
@@ -1230,51 +1317,43 @@ footer p {
     margin: auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     padding: 10px 0;
     border-radius: 5px;
     display: none;
- 
+
 }
-/* .clickpost .article .box-3 .post-img .Delete-option {
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    background-color: red;
-    margin: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
- 
-} */
-.clickpost .article .box-3 .post-img .Delete-option .alert{
+
+.clickpost .article .box-3 .post-img .Delete-option .alert {
     width: 100%;
     height: 100%;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
- 
- 
+
+
 }
-.clickpost .article .box-3 .post-img .Delete-option .btngroup{
+
+.clickpost .article .box-3 .post-img .Delete-option .btngroup {
     width: 100%;
     height: 100%;
     display: flex;
     gap: 10px;
     padding: 0 10px;
 
- 
+
 }
-.clickpost .article .box-3 .post-img .Delete-option .btngroup button{
-        width: 100%;
-        /* height: 90%; */
+
+.clickpost .article .box-3 .post-img .Delete-option .btngroup button {
+    width: 100%;
+    /* height: 90%; */
     border: none;
     border-radius: 5px;
     font-weight: 600;
- 
+
 }
 
 
@@ -1282,7 +1361,7 @@ footer p {
 
 
 /* Search --------------------------------------------------------------------------------------------------------------------------------*/
-.search{
+.search {
     width: 100%;
     height: 100%;
     /* padding: 10px; */
@@ -1290,85 +1369,93 @@ footer p {
     flex-direction: column;
     padding: 0 5px;
     position: relative;
-    
-   
-   
+
+
+
 
 }
-.search .input{
+
+.search .input {
     position: sticky;
     top: 0px;
-    padding:  10px;
+    padding: 10px;
     background-color: var(--White);
     margin: 0;
 
 }
-.search input{
+
+.search input {
     width: 100%;
-    height: 40px ;
+    height: 40px;
     border-radius: 5px;
     padding: 0 10px;
     background-color: var(--input-color);
     border: none;
-    border: 1px solid   ;
+    border: 1px solid;
     margin-bottom: 10px;
     margin: 0;
-   
+
 }
-.search input:focus{
+
+.search input:focus {
     outline: none;
 
 }
-.search .feed{
+
+.search .feed {
     padding: 0;
 }
 
 
 
 /* profile page----------------------------------------------------------------------------------------------------------------------- */
-.profile{
+.profile {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    
+
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-  
+
     padding: 5px;
     /* background-color: red; */
 }
-.profile-photo{
+
+.profile-photo {
     width: 100%;
     height: 100px;
-   
+
     display: flex;
     justify-content: center;
-    
+
     align-items: center;
     /* margin-top: 10px; */
-   
+
 }
-.profile-photo .photo-box{
-  
+
+.profile-photo .photo-box {
+
     background-color: var(--input-color);
     width: 100px;
     height: 100px;
     border-radius: 50%;
-   display: flex;
-   
-   align-items: center;
-   justify-content: center;
-  
-   font-weight: 600;
-   overflow: hidden;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    overflow: hidden;
 }
-.profile-photo .photo-box img{
+
+.profile-photo .photo-box img {
     width: 100%;
     height: 100%;
 }
-.profile-details{
+
+.profile-details {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1377,46 +1464,52 @@ footer p {
     gap: 10px;
 
 }
-.form-box{
+
+.form-box {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
 
 
-    
+
+
 }
-.form-box label{
+
+.form-box label {
     font-weight: 700;
 
 }
-.form-box .box{
-    
+
+.form-box .box {
+
     height: 40px;
     border: 3px solid var(--input-color);
     background-color: var(--input-color);
     border-radius: 5px;
     padding: 0 10px;
     display: flex;
- 
+
     align-items: center;
 }
-.form-box .box p{
+
+.form-box .box p {
     margin: 0;
 }
-.form-box input:focus{
-    
-   outline: none;
+
+.form-box input:focus {
+
+    outline: none;
 }
 
-.form-box .box-bio{
+.form-box .box-bio {
     width: 100%;
-   height: fit-content;
+    height: fit-content;
     background-color: var(--input-color);
     padding: 10px;
     border: 3px solid var(--input-color);
 }
-.edit-btn{
+
+.edit-btn {
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -1427,7 +1520,8 @@ footer p {
     font-weight: 600;
     border: 3px solid var(--input-color);
 }
-.signout-btn{
+
+.signout-btn {
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -1437,7 +1531,7 @@ footer p {
 }
 
 /* notification-------------------------------------------------------------------------------------------------------------------- */
-.notification{
+.notification {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -1445,17 +1539,28 @@ footer p {
     height: 100%;
     padding: 5px;
 
-    
+
 }
-.notification .box{
+
+.notification .box {
+    text-decoration: none;
     width: 100%;
     height: fit-content;
     background-color: var(--gray);
     border-radius: 5px;
+    bottom: 1px solid;
 }
-.notification .box p{
+
+.notification .box a {
+    text-decoration: none;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--gray);
+    border-radius: 5px;
+    bottom: 1px solid;
+}
+
+.notification .box a p {
     padding: 2px 5px;
-   margin: 0;
+    margin: 0;
 }
-
-

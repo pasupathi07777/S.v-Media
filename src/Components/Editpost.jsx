@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-use-history'
 const Editpost = () => {
     let Final_Result=""
     let Final_edit=""
-    let {signupResponce,data, Editposttext,setEditposttext,Editpostimage,setEditpostimage,setEditpostupdate,setfeed}=useContext(Contex)
+    let {signupResponce,data, Editposttext,setEditposttext,Editpostimage,setEditpostimage,setfeed}=useContext(Contex)
     let {id}=useParams()
     id=Number(id)
     let history=useHistory()

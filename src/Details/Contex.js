@@ -182,7 +182,7 @@ export let Dataprovider = ({ children }) => {
     let Root = useHistory()
     let [statuspost, setstatuspost] = useState("")
     function fun2() {
-        statuspost !== "" && Root.push('addstatus')
+        statuspost!==""  && Root.push('addstatus')
     }
 
 
@@ -214,10 +214,11 @@ export let Dataprovider = ({ children }) => {
         let id = (Responce.length) ? Responce.length + 1 : 1
         localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText, message: `${signupResponce.name} Add New Status` }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
-        setupdatestatus(Responce_3)
+        setupdatestatus(Responce_3.reverse())
         setstatuspost("")
         setstatusText("")
-        backhome()
+     
+        history.push('/')
 
 
 
@@ -244,7 +245,7 @@ export let Dataprovider = ({ children }) => {
         e.preventDefault()
         let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         let id = (Responce_1.length) ? Responce_1.length + 1 : 1
-        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post` }]));
+        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post`,like:false }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         setpostText("")
@@ -267,6 +268,37 @@ export let Dataprovider = ({ children }) => {
 
 
 
+    // like button controll
+    let [checked,setrchecked]=useState(false)
+
+    let likebtn=(id)=>{
+   
+
+        setrchecked(!checked)
+        let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
+         Responce_1.map(a=>a.id===id?a.like=checked:'')
+         console.log(Responce_1)
+         localStorage.setItem("pasupathi_media_posts", JSON.stringify(Responce_1))
+         Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
+         setfeed(Responce_1.reverse())
+    
+    
+       
+    
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
     // local server
     useEffect(() => {
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media"))
@@ -275,9 +307,9 @@ export let Dataprovider = ({ children }) => {
         ))
         let Responce_3 = (JSON.parse(localStorage.getItem("pasupathi_media_status")) == null) ? localStorage.setItem("pasupathi_media_status", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_media_status"))
         let Responce_4 = (JSON.parse(localStorage.getItem("pasupathi_media_posts")) == null) ? localStorage.setItem("pasupathi_media_posts", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_media_posts"))
-        setupdatestatus(Responce_3)
+        setupdatestatus(Responce_3.reverse())
 
-        setfeed(Responce_4)
+        setfeed(Responce_4.reverse())
         console.log(Responce_4)
         let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
 
@@ -351,6 +383,8 @@ export let Dataprovider = ({ children }) => {
             // post 
             setpostText, setpostimage, sumitpost, feed, postimage,setfeed,
             //clickpost 
+            // ;like btn
+            likebtn,checked,
 
             //editpost
 

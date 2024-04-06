@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { json } from 'react-router'
+
 import { useHistory } from 'react-router-use-history'
 
 
 export const Editprofile = () => {
-    let geb="mail"
+    // let geb="mail"
     let history = useHistory()
     let [name, setname] = useState("")
     let [username, setusername] = useState("")
@@ -30,8 +30,9 @@ export const Editprofile = () => {
         setname(result.name)
         setusername(result.user_name)
         setbio(result.bio)
-        setgenter(result.genter="mail")
+        setgenter(result.genter="male")
         setprofileimage(result.profileimage)
+        
 
     }, [])
 
@@ -66,9 +67,7 @@ export const Editprofile = () => {
         setprofileimage(responce)
     }
 
-    let genterOption=()=>{
-        
-    }
+ 
     return (
         <form action="" className='Profileedit-form' onSubmit={handleSumit} >
             <div className="box-profile">
