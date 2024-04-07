@@ -7,22 +7,31 @@ import { FaShare } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Feed = () => {
-  let { signupResponce, feed, likebtn, checked } = useContext(Contex)
+  let { signupResponce, feed, likebtn } = useContext(Contex)
 
   // let like_value = ""
   let photo = ''
-  console.log(checked)
 
-
-
-
-  useEffect(() => {
-
+  let [updatephoto,setupdatephoto]=useState()
+  
+  let gg=()=>{
     let profile_img = JSON.parse(localStorage.getItem("pasupathi_media"))
     profile_img.map(a =>
       photo = a)
 
     console.log(photo.profileimage)
+    setupdatephoto(false) 
+
+  }
+  updatephoto===true && gg()
+
+
+
+
+  useEffect(() => {
+   setupdatephoto(true) 
+
+    
 
 
 
@@ -64,16 +73,19 @@ const Feed = () => {
           </div>
           <div className="feed-2 d-flex flex-column">
 
-            {item.text && <div className="content">
-            {text === true ? <p>{`${item.text.slice(0, 20)}`} <small onClick={toggle}> More...</small></p> : <p>{`${item.text}`} <small onClick={toggle}> Less...</small></p>}
+            {item.text &&
+            <div className="content">
+              {text === true ? <p>{`${item.text.slice(0, 20)}`} <small onClick={toggle}> More...</small></p> : <p>{`${item.text}`} <small onClick={toggle}> Less...</small></p>}
+
+             
+
+            </div>}
 
             <Link to={`/${item.id}`}>
-            
-            
+              
+              
               {item.image && <img src={item.image} alt="Uploaded" />}
             </Link>
-
-          </div>}
             
 
 

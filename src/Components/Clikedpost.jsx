@@ -7,29 +7,39 @@ import Contex from '../Details/Contex';
 import { useHistory } from 'react-router-use-history';
 import { Link } from 'react-router-dom';
 
-const Clikedpost = ({editbox,seteditbox}) => {
+const Clikedpost = () => {
   let { id } = useParams()
   let [deletebox, setdeletebox] = useState(false)
+  let [editbox, seteditbox] = useState(false)
   console.log(typeof id)
   let { feed,setfeed, signupResponce,likebtn} = useContext(Contex)
   console.log(id)
   let post = feed.find(a=>a.id===Number(id))
 
-  let tt=()=>{
-    post=feed.find(a=>a.id===Number(id))
+  // =-----------
+  let [updatepost,setupdatepost]=useState(false)
 
+  let ff=()=>{
+    post=feed.find(a=>a.id===Number(id))
+    setupdatepost(false)
 
   }
 
-  useEffect(()=>{
-    // post=feed.find(a=>a.id===Number(id))
-    tt()
+  updatepost===true && ff()
 
-  },[feed,tt])
+ 
+
+  useEffect(()=>{
+   
+    setupdatepost(true)
+    
+
+  },[feed])
   console.log(post)
 
   let editbtn=()=>{
     seteditbox(prevState => !prevState)
+    // seteditbox(!editbox)
   }
 
   let history=useHistory()

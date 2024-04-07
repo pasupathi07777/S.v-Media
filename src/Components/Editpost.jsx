@@ -37,7 +37,7 @@ const Editpost = () => {
             console.log(Final_Result)
           setEditpostimage(Final_Result.image)
           setEditposttext(Final_Result.text)
-    })
+    },[])
 
     let crerateurl=(e)=>{
         let Res=URL.createObjectURL(e[0])

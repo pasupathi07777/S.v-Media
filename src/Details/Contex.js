@@ -182,7 +182,7 @@ export let Dataprovider = ({ children }) => {
     let Root = useHistory()
     let [statuspost, setstatuspost] = useState("")
     function fun2() {
-        statuspost!==""  && Root.push('addstatus')
+        statuspost !== "" && Root.push('addstatus')
     }
 
 
@@ -204,6 +204,11 @@ export let Dataprovider = ({ children }) => {
 
 
     }
+    function backlogin() {
+        history.push('Login')
+
+
+    }
 
     function update(e) {
         e.preventDefault()
@@ -217,7 +222,7 @@ export let Dataprovider = ({ children }) => {
         setupdatestatus(Responce_3.reverse())
         setstatuspost("")
         setstatusText("")
-     
+
         history.push('/')
 
 
@@ -245,7 +250,7 @@ export let Dataprovider = ({ children }) => {
         e.preventDefault()
         let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         let id = (Responce_1.length) ? Responce_1.length + 1 : 1
-        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post`,like:false }]));
+        localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post`, like: false }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         setpostText("")
@@ -256,6 +261,10 @@ export let Dataprovider = ({ children }) => {
 
 
     }
+
+    // edit post
+
+    let [editbox, seteditbox] = useState(false)
 
 
 
@@ -269,23 +278,42 @@ export let Dataprovider = ({ children }) => {
 
 
     // like button controll
-    let [checked,setrchecked]=useState(false)
+    let [checked, setrchecked] = useState(false)
 
-    let likebtn=(id)=>{
-   
+    let likebtn = (id) => {
+
 
         setrchecked(!checked)
         let Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
-         Responce_1.map(a=>a.id===id?a.like=checked:'')
-         console.log(Responce_1)
-         localStorage.setItem("pasupathi_media_posts", JSON.stringify(Responce_1))
-         Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
-         setfeed(Responce_1.reverse())
-    
-    
-       
-    
-      }
+        Responce_1.map(a => a.id === id ? a.like = checked : '')
+        console.log(Responce_1)
+        localStorage.setItem("pasupathi_media_posts", JSON.stringify(Responce_1))
+        Responce_1 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
+        setfeed(Responce_1.reverse())
+
+
+
+
+    }
+
+    let [Relode, setrelode] = useState(false)
+
+
+    let Check = () => {
+        let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
+
+        log_sign_responce.user === true && backhome()
+        log_sign_responce.user === false && backlogin()
+        log_sign_responce.user === true && setLogin(log_sign_responce.user)
+
+        setrelode(false)
+
+
+
+    }
+    Relode===true && Check()
+
+
 
 
 
@@ -301,6 +329,11 @@ export let Dataprovider = ({ children }) => {
 
     // local server
     useEffect(() => {
+
+      
+
+
+
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media"))
         Responce && Responce.forEach(a => (
             setsignupResponce(a)
@@ -311,28 +344,20 @@ export let Dataprovider = ({ children }) => {
 
         setfeed(Responce_4.reverse())
         console.log(Responce_4)
-        let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
 
-        log_sign_responce.user === true && history.push('/')//backhome()
-        log_sign_responce.user === false && history.push('Login') //loginpage()
-        log_sign_responce.user === true && setLogin(log_sign_responce.user)
 
-        // let log_sign_responce = JSON.parse(localStorage.getItem("pasupathi_media_login")) 
-        if (log_sign_responce.user === true) {
+        // let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
 
-            // backhome()
-            // console.log("/")
-            history.push('/')
+        // log_sign_responce.user === true && backhome()
+        // log_sign_responce.user === false && backlogin() 
+        // log_sign_responce.user === true && setLogin(log_sign_responce.user)
+
+        setrelode(true)
 
 
 
-        } else if (log_sign_responce.user === false) {
 
 
-            // backlogin()
-            history.push('Login')
-
-        }
 
 
 
@@ -351,8 +376,8 @@ export let Dataprovider = ({ children }) => {
         !Responce && setsignupResponce(Responce)
 
 
-        // let [Editpostupdate,setEditpostupdate]=useState(true)
-    }, [message, Login,history ])
+
+    }, [message, Login])
 
 
 
@@ -381,14 +406,15 @@ export let Dataprovider = ({ children }) => {
             // post status
             statusText, setstatusText, update, updatestatus,
             // post 
-            setpostText, setpostimage, sumitpost, feed, postimage,setfeed,
+            setpostText, setpostimage, sumitpost, feed, postimage, setfeed,
             //clickpost 
+
             // ;like btn
-            likebtn,checked,
+            likebtn, checked,
 
             //editpost
 
-            Editposttext, setEditposttext, Editpostimage, setEditpostimage,setEditpostupdate,Editpostupdate,
+            Editposttext, setEditposttext, Editpostimage, setEditpostimage, setEditpostupdate, Editpostupdate, editbox, seteditbox
 
 
 
@@ -397,8 +423,7 @@ export let Dataprovider = ({ children }) => {
 
         }}>
             {children}
-        </Contex.Provider>
-    )
+        </Contex.Provider>)
 }
 
 
