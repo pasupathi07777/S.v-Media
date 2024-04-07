@@ -19,7 +19,10 @@ export const Editprofile = () => {
 
     console.log(name)
     let result = ""
-    useEffect(() => {
+
+    let [relode,setrelode]=useState(false)
+
+    let ll=()=>{
         let respomce = JSON.parse(localStorage.getItem("pasupathi_media"))
         console.log(respomce)
         respomce.map((a) =>
@@ -32,6 +35,19 @@ export const Editprofile = () => {
         setbio(result.bio)
         setgenter(result.genter="male")
         setprofileimage(result.profileimage)
+
+        setrelode(false)
+
+    }
+
+    relode===true && ll()
+
+
+
+
+    useEffect(() => {
+        setrelode(true)
+      
         
 
     }, [])

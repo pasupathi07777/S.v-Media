@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import Contex from '../Details/Contex'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router-use-history'
@@ -21,22 +21,34 @@ const Editpost = () => {
     //       setEditpostimage(Final_Result.image)
     //       setEditposttext(Final_Result.text)
 
+    let [relode,setrelode]=useState(false)
+
+
+    let oo=()=>{
+
+      let  Responce =JSON.parse(localStorage.getItem('pasupathi_media_posts'))
+      console.log(Responce)
+      console.log(id)
+   
+    let Result=Responce.filter((a)=>(a.id===id))
+      
+    Result.map(a=>
+        Final_Result=a)
+        console.log(Final_Result)
+      setEditpostimage(Final_Result.image)
+      setEditposttext(Final_Result.text)
+
+    }
+
+    relode ===true && oo()
+
     
    
    
 
     useEffect(()=>{
-          let  Responce =JSON.parse(localStorage.getItem('pasupathi_media_posts'))
-          console.log(Responce)
-          console.log(id)
-       
-        let Result=Responce.filter((a)=>(a.id===id))
-          
-        Result.map(a=>
-            Final_Result=a)
-            console.log(Final_Result)
-          setEditpostimage(Final_Result.image)
-          setEditposttext(Final_Result.text)
+      setrelode(true)
+         
     },[])
 
     let crerateurl=(e)=>{
