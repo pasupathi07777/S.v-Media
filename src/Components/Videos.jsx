@@ -1,10 +1,9 @@
 import React, {  } from 'react'
-import { useContext } from 'react'
-import Contex from '../Details/Contex'
+
 import { Link } from 'react-router-dom'
 
 const Videos = () => {
-  let {  } = useContext(Contex)
+  // let {  } = useContext(Contex)
 
 
   let notfy=JSON.parse(localStorage.getItem('pasupathi_status'))

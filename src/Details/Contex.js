@@ -374,6 +374,7 @@ export let Dataprovider = ({ children }) => {
         setrelode(true)
 
         let Responce_5 = (JSON.parse(localStorage.getItem("pasupathi_status")) == null) ? localStorage.setItem("pasupathi_status", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_status"))
+        console.log(Responce_5)
 
 
 

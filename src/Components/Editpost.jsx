@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Contex from '../Details/Contex'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router-use-history'
@@ -39,8 +39,7 @@ const Editpost = () => {
 
 
 
-  }, [])
-
+  }, [Final_Result.image,Final_Result.text,setEditpostimage,setEditposttext])
   let crerateurl = (e) => {
     let Res = URL.createObjectURL(e[0])
     setEditpostimage(Res)
