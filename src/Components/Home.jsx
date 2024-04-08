@@ -15,15 +15,13 @@ const Home = () => {
   let { feed } = useContext(Contex)
   return (
     <div className={feed.lengtn ? 'home-1' : 'home-1'}>
-       {/* <Header /> */}
+     
      
     
 
-      <Status />
+      <Status  />
       <Feed />
-      {/* <Routes>
-        <Route path='/search' element={<Search/>}/>
-      </Routes> */}
+     
     
 
 

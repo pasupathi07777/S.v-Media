@@ -59,10 +59,7 @@ html {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* overflow-y: inherit;
-    overflow-x: hidden;
-    scrollbar-width: 10px;
-    -ms-overflow-style: 10px; */
+
 
 }
 
@@ -75,10 +72,11 @@ html {
     overflow-y: scroll;
     overflow-y: inherit;
     overflow-x: hidden;
-    scrollbar-width: 10px;
+    scrollbar-width: none;
     -ms-overflow-style: 10px;
 
     scrollbar-width: 1px;
+    background-color: #ffffffd2;
 }
 
 /* login form  */
@@ -485,23 +483,20 @@ html {
 
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: start; */
-    gap: 10px;
-    /* overflow-y: scroll; */
+
 }
 
 header {
     width: 100%;
     height: 30px;
-    /* position: sticky;
-    top: 0%;
-    left: 0; */
+
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #6c5ce7;
+    background-color: black;
+    color: #fff;
     z-index: 100;
 }
 
@@ -546,11 +541,16 @@ header h3 {
     width: 100%;
     height: 100%;
 
-    padding: 0 5px;
+    padding: 5px 10px;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-transform: capitalize;
 
-    gap: 5px;
+
+
+    gap: 10px;
 }
 
 
@@ -564,8 +564,11 @@ header h3 {
     /* justify-content: space-between; */
     align-items: center;
     border-radius: 5px;
-    border: 1px solid #b2bec3;
+    /* border: 1px solid #7f8fa6; */
     padding-bottom: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
 
 }
 
@@ -636,7 +639,8 @@ header h3 {
     font-size: 1.3rem;
 
 }
-.article a{
+
+.article a {
     display: flex;
     flex-direction: column;
 }
@@ -650,9 +654,10 @@ header h3 {
     /* background-color: #6c5ce7; */
     font-size: 1.2rem;
     font-weight: 400;
-  
+
 }
-.article a{
+
+.article a {
     text-decoration: none;
     color: var(--black);
 }
@@ -714,6 +719,8 @@ footer {
 
     color: var(--White);
     background-color: var(--login-btn);
+    background-color: black;
+    color: #fff;
 
 
 }
@@ -728,7 +735,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #2d3436;
+    color: #fff;
 
 }
 
@@ -908,7 +915,8 @@ footer p {
 
     border-radius: 30px;
 
-    height: 50px;
+    height: 40px;
+    line-height: 40PX;
 
     position: fixed;
     display: flex;
@@ -917,9 +925,9 @@ footer p {
 
 
     bottom: -100px;
-    background-color: var(--black);
+    background-color: black;
     color: var(--White);
-    padding: 0 10px;
+    padding: 0 5px;
 
 
 
@@ -941,8 +949,9 @@ footer p {
     border-radius: 50%;
     border: none;
     line-height: 30px;
-    background-color: var(--gray);
+    /* background-color: var(--gray);    */
     font-size: 1.2rem;
+
 
 
 }
@@ -965,7 +974,7 @@ footer p {
     padding: 0;
     font-weight: 500;
     text-transform: capitalize;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 1rem;
 }
 
@@ -981,18 +990,12 @@ footer p {
 
     min-height: 200px;
     width: 100%;
-
-
-    border-bottom: 3px solid #b2bec3;
-    border-top: 3px solid #b2bec3;
-    padding: 5px;
+    padding: 10px 10px 5px 10px;
     display: flex;
-
-
-
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     margin: 0;
+ 
 
 }
 
@@ -1015,9 +1018,12 @@ footer p {
 
 
     border-radius: 5px;
+    overflow: hidden;
 
     background-color: var(--White);
-    border: 1px solid #b2bec3;
+    /* border: 1px solid #b2bec3; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border: none;
 }
 
 .create-status label {
@@ -1051,6 +1057,7 @@ footer p {
     width: 100%;
     margin: 0%;
     text-align: center;
+    font-weight: 500;
 
 }
 
@@ -1078,7 +1085,7 @@ footer p {
 
     width: 100%;
     height: 100%;
-    gap: 5px;
+    gap: 10px;
     overflow-x: scroll;
     scrollbar-width: none;
     display: flex;
@@ -1088,19 +1095,25 @@ footer p {
     width: 100px;
     min-width: 100px;
     height: 100%;
-    /* background-color: red; */
+   
     display: flex;
 
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid var(--black);
+    /* border: 1px solid var(--black); */
+   
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+   
+   
 
 }
 
 .each-post img {
     width: 100%;
+    height: 100%;
+    
 
-    object-fit: contain;
+   
 
 }
 
@@ -1112,7 +1125,7 @@ footer p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
     gap: 5px;
 
 }
@@ -1121,9 +1134,10 @@ footer p {
     /* width: 300px; */
     width: 100%;
     min-height: 200px;
+    max-height: 300px;
 
     /* height: 300px; */
-    max-height: 400px;
+    max-height: 200px;
 
 
     background-color: var(--black);
@@ -1137,8 +1151,8 @@ footer p {
 
 .Addstatus .status-img-box img {
     width: 100%;
-    /* height: 100%; */
-    object-fit: cover;
+    height: 100%;
+    /* object-fit: cover; */
     border-radius: 5px;
 }
 
@@ -1163,6 +1177,8 @@ footer p {
     overflow-y: visible;
     padding: 5px;
     border-radius: 5px;
+    border: none;
+    background-color: var(--gray);
 
 
 }
@@ -1177,6 +1193,8 @@ footer p {
     border-radius: 5px;
     padding: 5px;
     font-weight: 600;
+    background-color: var(--black);
+    color: #fff;
 }
 
 /* click-status */
@@ -1186,7 +1204,7 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: var(--black);  */
+
 }
 
 .click-status img {
@@ -1304,8 +1322,9 @@ footer p {
 .clickpost .article .box-3 .post-img {
     position: relative;
 }
+
 .clickpost .article .box-3 .content {
-  width: 100%;
+    width: 100%;
 }
 
 .clickpost .article .box-3 .post-img .Delete-option {
@@ -1367,7 +1386,7 @@ footer p {
     /* padding: 10px; */
     display: flex;
     flex-direction: column;
-    padding: 0 5px;
+    padding: 0 10px;
     position: relative;
 
 
@@ -1379,7 +1398,7 @@ footer p {
     position: sticky;
     top: 0px;
     padding: 10px;
-    background-color: var(--White);
+    /* background-color: var(--White); */
     margin: 0;
 
 }

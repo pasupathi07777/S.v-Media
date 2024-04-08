@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { Outlet} from 'react-router-dom'
 import { FaRegPlusSquare } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 import { useContext } from 'react';
 import Contex from '../Details/Contex';
@@ -50,7 +51,8 @@ const Footer = () => {
         <p  onClick={footerSumit}><FaRegPlusSquare /></p>
         {/* <div className="a" ><FaSearch /></div> */}
         <div className="a"   onClick={(e)=>{video(); setaddbtn(false);}}><FaHeart /></div>
-        <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}> <div className="icon-profile"></div></div>
+        {/* <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}> <div className="icon-profile"></div></div> */}
+        <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}><CgProfile /></div>
         
 
         {/* <Link to={'video'}><PiVideoFill /></Link>

@@ -39,15 +39,12 @@ const Popbtn = () => {
   return (
     <main className='popep-btn' style={addbtn === true ? { bottom: 50 } : {}}>
 
-      <div className="btn"><button type="submit" onClick={(e) => { fun1(); setaddbtn(false); }}><FaImages /></button> Post</div>
-      {/* <div className="btn"><button type="submit" onClick={(e) => { fun2(); setaddbtn(false); }}>
-        <label htmlFor="status-post"><FaBookOpen /></label>
-        <input type="file" name="" onChange={(e) => urlconvert(e)} id="status-post" />
-      </button> Status</div> */}
-      <div className="btn"><button type="submit" onClick={(e) => { fun22(); setaddbtn(false); }}>
+      <div className="btn"  onClick={(e) => { fun1(); setaddbtn(false); }}><button type="submit"><FaImages /></button> Post</div>
+    
+      <div className="btn" onClick={(e) => { fun22(); setaddbtn(false); }}><button type="submit" >
       <FaBookOpen />
        
-      </button> Status</div>
+      </button> Status </div>
 
 
 

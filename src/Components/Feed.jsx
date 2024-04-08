@@ -39,6 +39,7 @@ const Feed = () => {
 
   let [text, settext] = useState(false)
   let toggle = () => {
+    console.log(this.id)
     settext(!text)
     console.log(text)
   }

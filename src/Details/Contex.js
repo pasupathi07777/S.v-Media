@@ -170,6 +170,7 @@ export let Dataprovider = ({ children }) => {
     let [Genter, setGenter] = useState("")
     let [potfolio, setpotfolio] = useState([])
     console.log(potfolio)
+  
 
 
 
@@ -210,16 +211,26 @@ export let Dataprovider = ({ children }) => {
 
     }
 
+      // notificatio set up
+
+      let notify=[]
+      console.log(notify)
+
+
+
     function update(e) {
         e.preventDefault()
 
 
 
         let Responce = JSON.parse(localStorage.getItem("pasupathi_media_status"))
-        let id = (Responce.length) ? Responce.length + 1 : 1
+        let id = (Responce.length) ? Responce.length + 100 : 100
         localStorage.setItem("pasupathi_media_status", JSON.stringify([...Responce, { id: id, image: statuspost, text: statusText, message: `${signupResponce.name} Add New Status` }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         setupdatestatus(Responce_3.reverse())
+        let res= JSON.parse(localStorage.getItem("pasupathi_status"))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${Name} Add New status`,for:"status"}]))
+        console.log(notify)
         setstatuspost("")
         setstatusText("")
 
@@ -241,6 +252,8 @@ export let Dataprovider = ({ children }) => {
     let [Editpostimage, setEditpostimage] = useState("")
     let [Editpostupdate, setEditpostupdate] = useState(true)
 
+  
+
 
 
 
@@ -253,6 +266,12 @@ export let Dataprovider = ({ children }) => {
         localStorage.setItem("pasupathi_media_posts", JSON.stringify([...Responce_1, { id: id, name: Name, image: postimage, text: postText, date: format(new Date(), "MM,yyy,ddd,pp"), message: `${signupResponce.name} Add New post`, like: false }]));
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
+        let res= JSON.parse(localStorage.getItem("pasupathi_status"))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${Name} Add New Post`,for:"post"}]))
+      
+        console.log(res)
+
+
         setpostText("")
         setpostimage("")
 
@@ -343,7 +362,7 @@ export let Dataprovider = ({ children }) => {
         setupdatestatus(Responce_3.reverse())
 
         setfeed(Responce_4.reverse())
-        console.log(Responce_4)
+       
 
 
         // let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
@@ -353,6 +372,11 @@ export let Dataprovider = ({ children }) => {
         // log_sign_responce.user === true && setLogin(log_sign_responce.user)
 
         setrelode(true)
+
+        let Responce_5 = (JSON.parse(localStorage.getItem("pasupathi_status")) == null) ? localStorage.setItem("pasupathi_status", JSON.stringify([])) : JSON.parse(localStorage.getItem("pasupathi_status"))
+
+
+
 
 
 

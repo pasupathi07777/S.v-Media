@@ -1,27 +1,33 @@
-import React from 'react'
+import React, {  } from 'react'
 import { useContext } from 'react'
 import Contex from '../Details/Contex'
 import { Link } from 'react-router-dom'
 
 const Videos = () => {
-  let {updatestatus, feed}=useContext(Contex)
+  let {  } = useContext(Contex)
+
+
+  let notfy=JSON.parse(localStorage.getItem('pasupathi_status'))
+
   return (
     <div className="notification">
 
-      {feed.map(a=>
-        <div className="box" key={a.id}>
-         <Link to={`/video/${a.id}`}> <p>{a.message}</p></Link>
-        </div>
 
-      )}
-      {updatestatus.map(a=>
-        <div className="box">
-        
-          <Link to={`/video/status/${a.id}`}> <p>{a.message}</p></Link>
-        </div>
 
-      )}
-      
+      {
+         notfy.reverse().map(a =>
+          a.for==='status'?
+
+          <div className="box" key={a.id}>
+            <Link to={`/status/${a.id}`}> <p>{a.message}</p></Link>
+          </div>:<div className="box" key={a.id}>
+            <Link to={`/video/${a.id}`}> <p>{a.message}</p></Link>
+          </div>
+  
+        ) 
+      }
+
+
 
     </div>
   )

@@ -1,4 +1,4 @@
-import  { Dataprovider } from './Details/Contex';
+import { Dataprovider } from './Details/Contex';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { Route, Routes } from 'react-router';
@@ -19,7 +19,6 @@ import Addstatus from './Components/Addstatus';
 import Clikedpost from './Components/Clikedpost';
 import Clickstatus from './Components/Clickstatus';
 import { Editprofile } from './Components/Editprofile';
-import { useState } from 'react';
 import Editpost from './Components/Editpost';
 
 
@@ -28,17 +27,21 @@ import Editpost from './Components/Editpost';
 
 function App() {
 
-  
-    // click post
-    let [editbox,seteditbox]=useState()
-    console.log(editbox)
+
+ 
+
   return (
-    <div className="App">
+    <div className="App d-sm-flex flex-sm-row">
       <Dataprovider>
-        <Header />
 
 
-        <div className="Rout-Box">
+        <div className="header d-sm-none w-100">
+          <Header className='d-sm-none' />
+
+        </div>
+
+
+        <div className="Rout-Box ">
           <Routes>
 
             <Route path='/'>
@@ -56,13 +59,13 @@ function App() {
               <Route path='/addpost' element={<Addpost />} />
               <Route path='/addvideo' element={<Addpostvideo />} />
               <Route path='/addstatus' element={<Addstatus />} />
-              <Route path='/:id' element={<Clikedpost editbox={editbox} seteditbox={seteditbox} />} />
+              <Route path='/:id' element={<Clikedpost />} />
               <Route path='/search/:id' element={<Clikedpost />} />
               <Route path='/video/:id' element={<Clikedpost />} />
-              <Route path='/editpost/:id' element={<Editpost/>} />
+              <Route path='/editpost/:id' element={<Editpost />} />
               <Route path='/status/:id' element={<Clickstatus />} />
               <Route path='/video/status/:id' element={<Clickstatus />} />
-              <Route path='/editprofile' element={<Editprofile/>}/>
+              <Route path='/editprofile' element={<Editprofile />} />
               <Route path='*' element={<Addstatus />} />
             </Route>
 
@@ -70,8 +73,15 @@ function App() {
 
           </Routes>
         </div>
+        <div className="navbar d-none d-sm-block w-25 h-100">
+          <p>hii</p>
+        </div>
 
-        <Footer />
+
+        <div className="footer d-sm-none w-100">
+          <Footer />
+
+        </div>
         <Popbtn />
 
       </Dataprovider>
