@@ -54,7 +54,7 @@ const Feed = () => {
 
       {feed.length ? feed.reverse().map(item =>
 
-        <article className='article' key={item.id}>
+        <article className='article' key={item.id} style={{minWidth:'200px'}}>
 
           <div className="box-1">
               <div className="profile-image">
@@ -62,21 +62,21 @@ const Feed = () => {
 
               </div>
               <div className="box-2">
-                <div className="name">
+                <p className="name m-0">
                   {signupResponce.name}
 
-                </div>
+                </p>
                 <div className="date">
                   {item.date}
 
                 </div>
               </div>
           </div>
-          <div className="feed-2 d-flex flex-column">
+          <div className="feed-2 d-flex flex-column ">
 
             {item.text &&
             <div className="content">
-              {text === true ? <p>{`${item.text.slice(0, 20)}`} <small onClick={toggle}> More...</small></p> : <p>{`${item.text}`} <small onClick={toggle}> Less...</small></p>}
+              {text === true ? <p className='p-0 m-0'>{`${item.text.slice(0, 20)}`} <small onClick={toggle}> More...</small></p> : <p className='p-0 m-0'>{`${item.text}`} <small onClick={toggle}> Less...</small></p>}
 
              
 
@@ -102,7 +102,7 @@ const Feed = () => {
               <button><FaShare /></button>
           </div>
         </article>) : 
-        <p>no post </p>
+        <p className='mt-5'>no post </p>
       }
 
 

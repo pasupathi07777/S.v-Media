@@ -1,15 +1,16 @@
 
 import { FaHome } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { Outlet} from 'react-router-dom'
+import { FaHeart } from "react-icons/fa";
 import { FaRegPlusSquare } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 
 import { useContext } from 'react';
 import Contex from '../Details/Contex';
 import { useHistory } from 'react-router-use-history';
+import { Outlet} from 'react-router-dom'
 
-import { FaHeart } from "react-icons/fa";
+
 
 
 const Footer = () => {
@@ -43,20 +44,19 @@ const Footer = () => {
   return (
     <>
     {Login===true && <footer>
-        {/* <Link to={'/'}><FaHome /></Link> */}
+      
         <div className="a" onClick={(e)=>{Home(); setaddbtn(false);}}><FaHome /></div>
         <div className="a" onClick={(e)=>{search(); setaddbtn(false);}}><FaSearch /></div>
-        {/* <Link to={'search'}><FaSearch /></Link> */}
+    
       
         <p  onClick={footerSumit}><FaRegPlusSquare /></p>
-        {/* <div className="a" ><FaSearch /></div> */}
+     
         <div className="a"   onClick={(e)=>{video(); setaddbtn(false);}}><FaHeart /></div>
-        {/* <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}> <div className="icon-profile"></div></div> */}
+   
         <div className="a"  onClick={(e)=>{profile(); setaddbtn(false);}}><CgProfile /></div>
         
 
-        {/* <Link to={'video'}><PiVideoFill /></Link>
-        <Link to={'profile'}> <div className="icon-profile"></div></Link> */}
+      
         <Outlet/>
        
     </footer>}</>

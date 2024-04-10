@@ -20,6 +20,21 @@ import Clikedpost from './Components/Clikedpost';
 import Clickstatus from './Components/Clickstatus';
 import { Editprofile } from './Components/Editprofile';
 import Editpost from './Components/Editpost';
+import { Link } from 'react-router-dom';
+
+// ------------------------------------------------------------------------
+import { FaHome } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+
+
+
+import { FaImages } from "react-icons/fa";
+
+import { FaBookOpen } from "react-icons/fa";
+
+import { IoMdContact } from "react-icons/io";
+import Errorpage from './Components/Errorpage';
 
 
 
@@ -28,10 +43,10 @@ import Editpost from './Components/Editpost';
 function App() {
 
 
- 
+
 
   return (
-    <div className="App d-sm-flex flex-sm-row">
+    <div className="App d-sm-flex flex-sm-row justify-content-between m-0 ">
       <Dataprovider>
 
 
@@ -63,18 +78,33 @@ function App() {
               <Route path='/search/:id' element={<Clikedpost />} />
               <Route path='/video/:id' element={<Clikedpost />} />
               <Route path='/editpost/:id' element={<Editpost />} />
+              <Route path='/editpost/' element={<Editpost />} />
               <Route path='/status/:id' element={<Clickstatus />} />
               <Route path='/video/status/:id' element={<Clickstatus />} />
               <Route path='/editprofile' element={<Editprofile />} />
-              <Route path='*' element={<Addstatus />} />
+              <Route path='*' element={<Errorpage/>} />
             </Route>
 
 
 
           </Routes>
         </div>
-        <div className="navbar d-none d-sm-block w-25 h-100">
-          <p>hii</p>
+        <div className="navbar d-none d-sm-block  ">
+           <h2 className=' '>S.v Media</h2>
+          
+          <nav className=''>
+            {/* <h2 className='pt-5 '>S.v Media</h2> */}
+
+            <Link to={'/'}><FaHome />  Home</Link>
+            <Link to={'search'}><FaSearch />  Search</Link>
+            <Link to={'addpost'}><FaImages />  Add Post</Link>
+            <Link to={'addstatus'}> <FaBookOpen />  Add Status</Link>
+            <Link to={'video'}><FaHeart />  Notification</Link>
+            <Link to={'profile'}><IoMdContact />  Profile</Link>
+
+
+          </nav>
+
         </div>
 
 

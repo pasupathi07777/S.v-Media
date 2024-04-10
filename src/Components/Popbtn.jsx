@@ -37,7 +37,7 @@ const Popbtn = () => {
 
 
   return (
-    <main className='popep-btn' style={addbtn === true ? { bottom: 50 } : {}}>
+    <main className='popep-btn d-sm-none' style={addbtn === true ? { bottom: 50 } : {}}>
 
       <div className="btn"  onClick={(e) => { fun1(); setaddbtn(false); }}><button type="submit"><FaImages /></button> Post</div>
     

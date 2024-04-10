@@ -15,15 +15,15 @@ const Editpost = () => {
 
   // let [relode, setrelode] = useState(false)
   let Responce = JSON.parse(localStorage.getItem('pasupathi_media_posts'))
-    console.log(Responce)
-    console.log(id)
+  console.log(Responce)
+  console.log(id)
 
   let Result = Responce.filter((a) => (a.id === id))
 
-    Result.map(a =>
-      Final_Result = a)
-    console.log(Final_Result)
-   
+  Result.map(a =>
+    Final_Result = a)
+  console.log(Final_Result)
+
 
 
 
@@ -33,13 +33,13 @@ const Editpost = () => {
 
 
   useEffect(() => {
-   
+
     setEditpostimage(Final_Result.image)
     setEditposttext(Final_Result.text)
 
 
 
-  }, [Final_Result.image,Final_Result.text,setEditpostimage,setEditposttext])
+  }, [Final_Result.image, Final_Result.text, setEditpostimage, setEditposttext])
   let crerateurl = (e) => {
     let Res = URL.createObjectURL(e[0])
     setEditpostimage(Res)
@@ -102,7 +102,7 @@ const Editpost = () => {
         <div className="post-img">
 
 
-          <label htmlFor="photo" className='photo'> {Final_Result.image !== '' ? <img src={Editpostimage} alt="" /> : "Add Post"}</label>
+          <label htmlFor="photo" className='photo'> {Final_Result.image !== '' ? <img className='' src={Editpostimage} alt="" /> : "Add Post"}</label>
 
           <input type="file" id="photo" style={{ display: 'none' }} onChange={(e) => crerateurl(e.target.files)} />
         </div>
