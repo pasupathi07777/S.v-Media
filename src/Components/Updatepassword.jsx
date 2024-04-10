@@ -11,7 +11,7 @@ const Updatepassword = () => {
 
 
   // let [passUpdatesucess,setpassUpdatesucess]=useState(false)
-  let [ setsuccess] = useState()
+  // let [ success,setsuccess] = useState()
   let [newPassword, setnewPassword] = useState("")
   let [confirmPassword, setconfirmPassword] = useState("")
   let [passError, setpassError] = useState("")
@@ -19,12 +19,12 @@ const Updatepassword = () => {
 
   let history = useHistory()
   let his = () => {
-    history.push('Login')
+    history.push('/Login')
 
   }
   let showmassage = () => {
     console.log("nnnnnn")
-    setsuccess(true)
+    // setsuccess(true)
     setmessage("Password Updated")
 
 
