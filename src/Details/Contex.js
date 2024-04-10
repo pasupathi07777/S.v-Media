@@ -229,7 +229,7 @@ export let Dataprovider = ({ children }) => {
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         setupdatestatus(Responce_3.reverse())
         let res= JSON.parse(localStorage.getItem("pasupathi_status"))
-        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${Name} Add New status`,for:"status"}]))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New status`,for:"status"}]))
         console.log(notify)
         setstatuspost("")
         setstatusText("")
@@ -267,7 +267,7 @@ export let Dataprovider = ({ children }) => {
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         let res= JSON.parse(localStorage.getItem("pasupathi_status"))
-        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${Name} Add New Post`,for:"post"}]))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New Post`,for:"post"}]))
       
         console.log(res)
 
@@ -365,11 +365,7 @@ export let Dataprovider = ({ children }) => {
        
 
 
-        // let log_sign_responce = (JSON.parse(localStorage.getItem("pasupathi_media_login")) === null) ? localStorage.setItem("pasupathi_media_login", JSON.stringify({ user: Login })) : JSON.parse(localStorage.getItem("pasupathi_media_login"))
-
-        // log_sign_responce.user === true && backhome()
-        // log_sign_responce.user === false && backlogin() 
-        // log_sign_responce.user === true && setLogin(log_sign_responce.user)
+      
 
         setrelode(true)
 

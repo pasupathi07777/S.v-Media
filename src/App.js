@@ -20,20 +20,11 @@ import Clikedpost from './Components/Clikedpost';
 import Clickstatus from './Components/Clickstatus';
 import { Editprofile } from './Components/Editprofile';
 import Editpost from './Components/Editpost';
-import { Link } from 'react-router-dom';
+
 
 // ------------------------------------------------------------------------
-import { FaHome } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
 
-
-
-import { FaImages } from "react-icons/fa";
-
-import { FaBookOpen } from "react-icons/fa";
-
-import { IoMdContact } from "react-icons/io";
+import Laptopscreen from './Components/Laptopscreen';
 import Errorpage from './Components/Errorpage';
 
 
@@ -89,11 +80,11 @@ function App() {
 
           </Routes>
         </div>
-        <div className="navbar d-none d-sm-block  ">
+        {/* <div className="navbar d-none d-sm-block  ">
            <h2 className=' '>S.v Media</h2>
           
           <nav className=''>
-            {/* <h2 className='pt-5 '>S.v Media</h2> */}
+      
 
             <Link to={'/'}><FaHome />  Home</Link>
             <Link to={'search'}><FaSearch />  Search</Link>
@@ -105,7 +96,8 @@ function App() {
 
           </nav>
 
-        </div>
+        </div> */}
+        <Laptopscreen/>
 
 
         <div className="footer d-sm-none w-100">
