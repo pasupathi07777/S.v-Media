@@ -87,13 +87,16 @@ function App() {
       
 
  
-       <div className="footer w-100">
-       <Footer />
+       <div className="footer m-0 p-0 w-100 ">
+      
+       
       
          
 
         </div> 
-        
+
+        <Footer />
+       
         <Popbtn />
 
       </Dataprovider>
