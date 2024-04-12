@@ -43,9 +43,11 @@ function App() {
 
 
         <div className="header w-100">
-          <Header className='d-sm-none' />
+         
 
         </div>
+
+        <Header  />
 
 
         <div className="Rout-Box ">
