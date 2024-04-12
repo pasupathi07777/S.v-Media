@@ -505,7 +505,7 @@ html {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     /* left: 0; */
     width: 100%;
@@ -707,7 +707,7 @@ header h3 {
 
 /* footer */
 footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
   
     width: 100%;
