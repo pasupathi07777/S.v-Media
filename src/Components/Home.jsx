@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Route, Routes } from 'react-router';
 
 
 import Feed from './Feed'
@@ -6,6 +7,7 @@ import Feed from './Feed'
 
 import Contex from '../Details/Contex'
 import Status from './Status'
+import Search from './Search';
 
 
 
@@ -20,6 +22,9 @@ const Home = () => {
     
 
       <Status  />
+      <Routes>
+        <Route path='searhbox' element={<Search/>} />
+      </Routes>
       <Feed />
      
     

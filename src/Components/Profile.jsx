@@ -74,27 +74,33 @@ const Profile = () => {
 
               <label htmlFor="Bio">Bio</label>
 
+
               <div className="box-bio">{s.bio}
 
               </div>
 
             </div>
 
-            <>
-          <div className="form-box">
+            {/* <>
+              <div className="form-box">
+               
+
+              </div>
+              <div className="form-box">
+                
+              </div></> */}
+              <div className="btn-group">
               <button className="edit-btn" onClick={editprofile}>Edit Profile</button>
-
-            </div>
-            <div className="form-box">
               <button className="signout-btn" onClick={logout}>Log Out</button>
-            </div></>
+
+              </div>
 
 
 
-           
+
           </div>
-          
-          
+
+
 
         </div >)}
     </>

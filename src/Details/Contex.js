@@ -216,10 +216,13 @@ export let Dataprovider = ({ children }) => {
       let notify=[]
       console.log(notify)
 
+      let time= format(new Date(), "pp")
+
 
 
     function update(e) {
         e.preventDefault()
+        let time= format(new Date(), "pp")
 
 
 
@@ -229,7 +232,8 @@ export let Dataprovider = ({ children }) => {
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_status"))
         setupdatestatus(Responce_3.reverse())
         let res= JSON.parse(localStorage.getItem("pasupathi_status"))
-        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New status`,for:"status"}]))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New status`,for:"status",
+        date: time}]))
         console.log(notify)
         setstatuspost("")
         setstatusText("")
@@ -267,7 +271,7 @@ export let Dataprovider = ({ children }) => {
         let Responce_3 = JSON.parse(localStorage.getItem("pasupathi_media_posts"))
         setfeed(Responce_3.reverse())
         let res= JSON.parse(localStorage.getItem("pasupathi_status"))
-        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New Post`,for:"post"}]))
+        localStorage.setItem("pasupathi_status", JSON.stringify([...res,{id:id,message:`${signupResponce.name} Add New Post`,for:"post",date: time}]))
       
         console.log(res)
 

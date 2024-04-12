@@ -19,6 +19,7 @@
     --gray: #dfe6e9;
     --back-btn:#ced6e0;
     --uplode-btn:#5352ed;
+    --popep-btn:#57606f ;
 }
 
 html {
@@ -35,6 +36,7 @@ html {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: black;
   
 }
 
@@ -59,6 +61,7 @@ html {
 
 .App {
     width: 100vw;
+    max-width: 600px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -87,7 +90,8 @@ html {
     -ms-overflow-style: 10px;
 
     scrollbar-width: 1px;
-    background-color: #ffffffd2;
+    /* background-color: #ffffffd2; */
+    background-color: #fff;
 }
 
 /* login form  */
@@ -595,18 +599,19 @@ header h3 {
 .article .feed-2 a{
     width: 100%;
     height: fit-content;
+    display: flex;
    
 }
 .article .feed-2 a img{
     width: 100%;
     height: fit-content;
-    min-width: 200px;
-    min-height: 200px;
-    max-width: 500px;
-    max-inline-size: 500px;
+    /* min-width: 200px; */
+    min-height: 250px; 
+  
     border-radius: 5px;
     overflow: hidden;
     background-color: black;
+    margin: auto;
 
    
 }
@@ -644,7 +649,7 @@ header h3 {
     display: flex;
     flex-direction: column;
 
-    /* gap: 2px; */
+   
 
 }
 
@@ -768,11 +773,35 @@ footer p {
     align-items: center;
     gap: 20px;
     /* padding: 5px; */
+    position: relative;
 
 
 }
 
-.addpost button {
+
+
+.addpost a{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    border-radius: 2px;
+    text-transform: capitalize;
+    
+    font-weight: 600;
+    padding: 1px 5px;
+    font-weight: 500;
+    color: var(--black);
+    cursor: pointer;
+    text-transform: none;
+    text-decoration: none;
+   
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+
+}
+
+.addpost  button {
     border: none;
 
     border-radius: 5px;
@@ -853,11 +882,7 @@ footer p {
     /* width: 100%; */
     width: 100%;
     height: 100%;
-    /* min-width: 200px;
-    min-height: 200px;
-    /* height: 100%; */
-    /* max-height: 500px;
-    object-fit: contain; */
+   
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -936,7 +961,7 @@ footer p {
 
 
     bottom: -100px;
-    background-color: black;
+    background-color:var(--popep-btn);
     color: var(--White);
     padding: 0 5px;
 
@@ -1140,6 +1165,28 @@ footer p {
     align-items: center;
     padding: 10px;
     gap: 5px;
+    position: relative;
+
+}
+
+.Addstatus a{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    border-radius: 2px;
+    text-transform: capitalize;
+    
+    font-weight: 600;
+    padding: 1px 5px;
+    font-weight: 500;
+    color: var(--black);
+    cursor: pointer;
+    text-transform: none;
+    text-decoration: none;
+   
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 
 }
 
@@ -1247,7 +1294,7 @@ footer p {
     max-width: 500px;
     max-height: fit-content;
     max-height: 75%;
-    /* height: 90%;  */
+    
     background-color: #888;
     border-radius: 5px;
     min-width: 200px;
@@ -1269,11 +1316,15 @@ footer p {
     height: 100%;
     padding: 10px;
     display: flex;
-    /* flex-direction: column; */
+   
     justify-content: center;
     align-items: center;
     position: relative;
 }
+/* .clickpost a{
+    position: absolute;
+    background-color: #5352ed;
+} */
 .clickpost a{
     color: var(--black);
     cursor: pointer;
@@ -1286,7 +1337,7 @@ footer p {
     border: none;
     border-radius: 2px;
     text-transform: capitalize;
-    background-color:var(--back-btn);
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     font-weight: 600;
     padding: 1px 5px;
     font-weight: 500;
@@ -1370,6 +1421,7 @@ footer p {
 .clickpost .article .box-1 .edit-box .edit-optionbox {
     position: absolute;
     /* width: 100px; */
+    /* width: 50%; */
 
 
     right: 20px;
@@ -1402,11 +1454,14 @@ footer p {
 }
 
 .clickpost .article .box-3 .post-img .Delete-option {
-    width: 200px;
+    width: 70%;
+    height: 80px;
+    max-width: 300px;
     /* height: 100px; */
     position: absolute;
     background-color: var(--black);
     color: var(--White);
+    gap: 5px;
     margin: auto;
     top: 50%;
     left: 50%;
@@ -1478,6 +1533,7 @@ footer p {
 }
 
 .search input {
+    position: sticky;
     width: 100%;
     height: 40px;
     border-radius: 5px;
@@ -1498,18 +1554,35 @@ footer p {
 }
 
 .search .feed {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    /* align-items: start; */
+    flex-wrap: wrap;
     padding: 0;
+    /* padding: auto; */
+  
+    
+   
 }
 
+
+
 .search .feed .feed-box{
-    width: 100%;
+    
+    max-width: 100%;
     /* background-color: red; */
+    flex-grow: 1;
     height: fit-content;
     display: flex;
     flex-direction: column;
+    /* flex-grow: 1; */
+    /* margin:  auto; */
 }
 .search .feed .feed-box .search-content {
     width: 100%;
@@ -1528,12 +1601,13 @@ footer p {
 
 }
 .search .feed .feed-box a  .secrch-post-img img{
-    width: fit-content;
-    height: fit-content;
-    max-width: 500px;
-    max-height: 500px;
-    min-width: 200px;
-    min-height: 200px;
+    width: 100%;
+    min-width: 100%;
+    height: 200px;
+ 
+
+  
+    min-height: 250px;
     background-color: black;
     border-radius: 5px;
 }
@@ -1566,6 +1640,7 @@ footer p {
 
     align-items: center;
     /* margin-top: 10px; */
+    
 
 }
 
@@ -1582,11 +1657,13 @@ footer p {
 
     font-weight: 600;
     overflow: hidden;
+    
 }
 
 .profile-photo .photo-box img {
     width: 100%;
     height: 100%;
+
 }
 
 .profile-details {
@@ -1603,6 +1680,7 @@ footer p {
     width: 100%;
     display: flex;
     flex-direction: column;
+   
 
 
 
@@ -1617,13 +1695,19 @@ footer p {
 .form-box .box {
 
     height: 40px;
-    border: 3px solid var(--input-color);
-    background-color: var(--input-color);
+ 
     border-radius: 5px;
     padding: 0 10px;
     display: flex;
+   
 
     align-items: center;
+  
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; 
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+   
+   
+   
 }
 
 .form-box .box p {
@@ -1638,12 +1722,17 @@ footer p {
 .form-box .box-bio {
     width: 100%;
     height: fit-content;
-    background-color: var(--input-color);
+    border-radius: 5px;
+
     padding: 10px;
-    border: 3px solid var(--input-color);
+    /* border: 3px solid var(--input-color); */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
 }
 
 .edit-btn {
+    width: 100%;
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -1652,16 +1741,31 @@ footer p {
     border-radius: 5px;
     padding: 5px;
     font-weight: 600;
-    border: 3px solid var(--input-color);
+    background-color: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+
+   
 }
 
 .signout-btn {
+    width: 100%;
     border: none;
     border-radius: 5px;
     padding: 5px;
     font-weight: 600;
-    border: 3px solid var(--input-color);
+    background-color: transparent;
+   
     color: var(--red);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   
+   
+}
+.btn-group{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    gap: 5px;
 }
 
 /* notification-------------------------------------------------------------------------------------------------------------------- */
@@ -1682,9 +1786,13 @@ footer p {
     text-decoration: none;
     width: 100%;
     height: fit-content;
-    background-color: var(--gray);
+    /* background-color: var(--gray); */
     border-radius: 5px;
-    bottom: 1px solid;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    background-color: #d2dae2;
+   
 }
 
 .notification .box a {

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import Contex from '../Details/Contex'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router-use-history'
+import { Link } from 'react-router-dom'
 
 const Editpost = () => {
   let Final_Result = ""
@@ -77,8 +78,9 @@ const Editpost = () => {
 
 
   return (
-    <form action="" className='addpost' onSubmit={editSumit}>
-      <article className=' article article-2 ' >
+    <form action="" className='addpost p-2' onSubmit={editSumit}>
+      <Link to={`/${id}`}><div className="back-button">Back</div></Link>
+      <article className=' article article-2  ' >
         <div className="article-box-1">
           <div className="profile-image">
             {/* <img src="" alt="" /> */}

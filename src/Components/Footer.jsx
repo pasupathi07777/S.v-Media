@@ -30,6 +30,7 @@ const Footer = () => {
   }
   function search(){
     His_rout.push('search')
+    // His_rout.push('searhbox')
     setaddbtn(false)
   }
   

@@ -8,16 +8,16 @@ const Search = () => {
   let { feed, signupResponce } = useContext(Contex)
   let [searchinput, setsearchinput] = useState("")
   let ob = feed.filter(a => a.text.includes(searchinput))
-  console.log(ob)
+ 
   return (
     <div className="search ">
 
       <div className="input ">
         <input type="text" onChange={(e) => setsearchinput(e.target.value)} placeholder='Search' />
       </div>
-      <div className="feed  ">
+      <div className='feed flex-row' >
         {ob.length ? ob.map(item =>
-          <article className='article feed-box  ' key={item.id} >
+          <article className='article feed-box    ' key={item.id} >
             <div className="box-1">
               <div className="profile-image">
 
@@ -33,10 +33,7 @@ const Search = () => {
                 </div>
               </div>
             </div>
-            <div className="search-content">
-              <p className='m-0 '>{item.text}</p>
-
-            </div>
+            
 
 
 

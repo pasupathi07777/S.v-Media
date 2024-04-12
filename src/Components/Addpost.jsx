@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Contex from '../Details/Contex'
 import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
 
 const Addpost = () => {
   let { signupResponce, setpostText, postimage, setpostimage, sumitpost } = useContext(Contex)
@@ -23,6 +24,7 @@ const Addpost = () => {
 
   return (
     <form action="" className='addpost ' onSubmit={sumitpost}>
+       <Link to={'/'}><div className="back-button">Back</div></Link>
       <article className=' article article-2 ' >
         <div className="article-box-1">
           <div className="profile-image">

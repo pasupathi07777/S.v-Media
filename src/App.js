@@ -8,7 +8,7 @@ import Updatepassword from './Components/Updatepassword';
 import Profileedit from './Components/Profileedit'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-// import Status from './Components/Status'
+
 import Search from './Components/Search'
 import Addpost from './Components/Addpost'
 import Video from './Components/Videos'
@@ -24,7 +24,7 @@ import Editpost from './Components/Editpost';
 
 // ------------------------------------------------------------------------
 
-import Laptopscreen from './Components/Laptopscreen';
+// import Laptopscreen from './Components/Laptopscreen';
 import Errorpage from './Components/Errorpage';
 
 
@@ -37,11 +37,12 @@ function App() {
 
 
   return (
-    <div className="App d-sm-flex flex-sm-row justify-content-between m-0 ">
+    <div className="App  m-0 "> 
+     {/* d-sm-flex flex-sm-row justify-content-between */}
       <Dataprovider>
 
 
-        <div className="header d-sm-none w-100">
+        <div className="header w-100">
           <Header className='d-sm-none' />
 
         </div>
@@ -60,6 +61,8 @@ function App() {
               <Route path='Login/Profileedit' element={<Profileedit />} />
               <Route path='search' element={<Search />} />
               <Route index element={<Home />} />
+
+                
               <Route path='/video' element={<Video />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/addpost' element={<Addpost />} />
@@ -80,27 +83,11 @@ function App() {
 
           </Routes>
         </div>
-        {/* <div className="navbar d-none d-sm-block  ">
-           <h2 className=' '>S.v Media</h2>
-          
-          <nav className=''>
-      
-
-            <Link to={'/'}><FaHome />  Home</Link>
-            <Link to={'search'}><FaSearch />  Search</Link>
-            <Link to={'addpost'}><FaImages />  Add Post</Link>
-            <Link to={'addstatus'}> <FaBookOpen />  Add Status</Link>
-            <Link to={'video'}><FaHeart />  Notification</Link>
-            <Link to={'profile'}><IoMdContact />  Profile</Link>
+       
+        {/* <Laptopscreen/> */}
 
 
-          </nav>
-
-        </div> */}
-        <Laptopscreen/>
-
-
-        <div className="footer d-sm-none w-100">
+        <div className="footer w-100">
           <Footer />
 
         </div>
