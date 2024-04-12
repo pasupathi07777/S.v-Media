@@ -714,8 +714,8 @@ footer {
     align-items: center;
     color: var(--White);
     background-color: var(--login-btn);
-    background-color: red;
-    /* background-color: black; */
+    /* background-color: red; */
+    background-color: black;
     color: #fff;
 
 
