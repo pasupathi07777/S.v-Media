@@ -29,6 +29,7 @@ html {
 #root {
     width: 100vw;
     height: 100vh;
+    /* max-width: 600px; */
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -74,6 +75,7 @@ html {
     overflow-x: hidden;
     /* overflow-y: hidden; */
     margin: 0;
+    position: relative;
 
 
 
@@ -1884,4 +1886,8 @@ footer p {
 }
 .App .navbar nav a:checked{
     color: #6c5ce7;
+}
+
+footer{
+    background-color: black;
 }

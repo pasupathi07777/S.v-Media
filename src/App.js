@@ -37,17 +37,18 @@ function App() {
 
 
   return (
-    <div className="App  m-0 "> 
-     {/* d-sm-flex flex-sm-row justify-content-between */}
+    <div className="App  m-0 ">
+      {/* d-sm-flex flex-sm-row justify-content-between */}
       <Dataprovider>
 
 
         <div className="header w-100">
-         
+          <Header />
+
 
         </div>
 
-        <Header  />
+
 
 
         <div className="Rout-Box ">
@@ -78,27 +79,24 @@ function App() {
               <Route path='/status/:id' element={<Clickstatus />} />
               <Route path='/video/status/:id' element={<Clickstatus />} />
               <Route path='/editprofile' element={<Editprofile />} />
-              <Route path='*' element={<Errorpage/>} />
+              <Route path='*' element={<Errorpage />} />
             </Route>
 
 
 
           </Routes>
         </div>
-       
-      
 
- 
-       <div className="footer m-0 p-0 w-100 ">
-      
-       
-      
-         
 
-        </div> 
 
+
+        
+
+        <div className="footer">
+          
+        </div>
         <Footer />
-       
+
         <Popbtn />
 
       </Dataprovider>
