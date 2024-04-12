@@ -62,7 +62,7 @@ function App() {
               <Route path='search' element={<Search />} />
               <Route index element={<Home />} />
 
-                
+
               <Route path='/video' element={<Video />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/addpost' element={<Addpost />} />
@@ -84,13 +84,14 @@ function App() {
           </Routes>
         </div>
        
-        {/* <Laptopscreen/> */}
+      
 
 
-        <div className="footer w-100">
-          <Footer />
+        {/* <div className="footer w-100">
+         
 
-        </div>
+        </div> */}
+        <Footer />
         <Popbtn />
 
       </Dataprovider>
