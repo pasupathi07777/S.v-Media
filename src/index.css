@@ -803,16 +803,18 @@ footer p {
     align-items: center;
     gap: 20px;
     /* padding: 5px; */
-    position: relative;
+    /* position: relative; */
 
 
 }
 
 
 
-.addpost .back-button{
+
+.back-button{
     position: absolute;
-    top: 10px;
+    /* background-color: black; */
+    top: 40px;
     left: 10px;
     border: none;
     border-radius: 2px;

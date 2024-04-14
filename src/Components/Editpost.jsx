@@ -79,9 +79,8 @@ const Editpost = () => {
 
   return (
     <form action="" className='addpost p-2' onSubmit={editSumit}>
-      {/* <Link to={`/${id}`}><div className="back-button">Back</div></Link> */}
-      <div className="back-button"><Link to={`/${id}`}>Back</Link></div>
-      <div className="back-button"><Link to={`/${id}`}>Back</Link></div>
+    
+     <Link className='back-button' to={`/${id}`}>Back</Link>
       <article className=' article article-2  ' >
         <div className="article-box-1">
           <div className="profile-image">

@@ -24,8 +24,8 @@ const Addpost = () => {
 
   return (
     <form action="" className='addpost ' onSubmit={sumitpost}>
-       {/* <Link to={'/'}><div className="back-button">Back</div></Link> */}
-       <div className="back-button"><Link to={'/'}>Back</Link></div>
+     
+      <Link className='back-button'  to={'/'}>Back</Link>
       <article className=' article article-2 ' >
         <div className="article-box-1">
           <div className="profile-image">
