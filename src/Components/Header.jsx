@@ -15,9 +15,7 @@ const Header = () => {
       
       <h3>S.v Media
       </h3>
-      {/* <div className="notify-icon">
-        <IoIosNotifications />
-      </div> */}
+     
 
     </header>}
    </>

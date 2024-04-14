@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App  m-0 ">
-      {/* d-sm-flex flex-sm-row justify-content-between */}
+      
       <Dataprovider>
 
 
@@ -92,10 +92,11 @@ function App() {
 
         
 
-        <div className="footer">
+        <div className="footer w-100">
+        <Footer />
           
         </div>
-        <Footer />
+        
 
         <Popbtn />
 
