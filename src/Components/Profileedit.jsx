@@ -3,9 +3,10 @@ import React, { useContext } from 'react'
 import Contex from '../Details/Contex'
 
 const Profileedit = () => {
+    //feed,setfeed,setsignupResponce 
 
 
-    let { profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin, setpotfolio} = useContext(Contex)
+    let {profileImage, setprofileImage, Name, setName, Bio, setBio, Genter, setGenter, signupResponce, userName, setuserName,setLogin, setpotfolio} = useContext(Contex)
 
     let setprofileImg = (e) => {
         setprofileImage(URL.createObjectURL(e[0]))
@@ -22,9 +23,13 @@ const Profileedit = () => {
     function potfolio_details(){
         let user_potfolio=localStorage.getItem("pasupathi_media")
         setpotfolio(user_potfolio)
+        // setfeed(feed.reverse())
+        // setsignupResponce(user_potfolio)
+        
 
 
     }
+   
 
 
 
@@ -47,7 +52,7 @@ const Profileedit = () => {
             <div className="box-profile">
                 <div className="img-box">{profileImage && <img src={profileImage} alt="" />}</div>
                 <input type="file" id='image' className='image' onChange={(e) => setprofileImg(e.target.files)} required />
-                <label htmlFor="image" id='image' className='image-lable'>Edit Profile</label>
+                <label htmlFor="image" id='image' className='image-lable'>{profileImage!==''?"Edit Photo" :"Add Photo"}</label>
             </div>
             <label htmlFor="name" id='name-lable'>Name</label>
             <input type="text" id='name' value={Name} onChange={(e) => setName(e.target.value)} required />

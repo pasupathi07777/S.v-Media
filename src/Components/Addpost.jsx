@@ -29,7 +29,7 @@ const Addpost = () => {
       <article className=' article article-2 ' >
         <div className="article-box-1">
           <div className="profile-image">
-            {/* <img src="" alt="" /> */}
+            <img src={signupResponce.profileimage} alt="" />
 
           </div>
           <div className="box-2">

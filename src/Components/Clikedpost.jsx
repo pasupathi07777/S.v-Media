@@ -97,6 +97,7 @@ const Clikedpost = () => {
       <article className='article clickpost-article'>
         <div className="box-1">
           <div className="profile-image">
+            <img src={signupResponce.profileimage} alt="" srcset="" />
 
           </div>
           <div className="box-2">

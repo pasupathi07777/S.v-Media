@@ -10,20 +10,21 @@ const Search = () => {
   let ob = feed.filter(a => a.text.includes(searchinput))
  
   return (
-    <div className="search ">
+    <div className="search  ">
 
       <div className="input ">
         <input type="text" onChange={(e) => setsearchinput(e.target.value)} placeholder='Search' />
       </div>
-      <div className='feed flex-row' >
+      <div className='feed flex-row justify-content-start align-items-start' >
         {ob.length ? ob.map(item =>
           <article className='article feed-box    ' key={item.id} >
             <div className="box-1">
               <div className="profile-image">
+                <img src={signupResponce.profileimage} alt="" srcset="" />
 
               </div>
               <div className="box-2">
-                <div className="name">
+                <div className="name text-start">
                   {signupResponce.name}
 
                 </div>
@@ -37,7 +38,7 @@ const Search = () => {
 
 
 
-            <Link to={`${item.id}`}>
+          <Link to={`${item.id}`} >
               <div className="post-img secrch-post-img  ">
 
 

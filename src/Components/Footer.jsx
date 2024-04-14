@@ -29,17 +29,17 @@ const Footer = () => {
 
   }
   function search(){
-    His_rout.push('search')
+    His_rout.push('/search')
     // His_rout.push('searhbox')
     setaddbtn(false)
   }
   
   function video(){
-    His_rout.push('video')
+    His_rout.push('/video')
     setaddbtn(false)
   }
   function profile(){
-    His_rout.push('profile')
+    His_rout.push('/profile')
     setaddbtn(false)
   }
   return (

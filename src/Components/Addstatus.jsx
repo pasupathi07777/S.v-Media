@@ -9,7 +9,7 @@ const Addstatus = () => {
   return (
 
     <form action="" className="Addstatus" onSubmit={update}>
-       <Link to={'/'}><div className="back-button">Back</div></Link>
+       <Link className='back-button' to={'/'}>Back</Link>
       <div className="status-img-box">
        
         <label htmlFor="status-post">{ statuspost !==''? <img src={`${statuspost}`} alt="" /> :<p>Add Image</p>}</label>

@@ -62,7 +62,8 @@ function App() {
               <Route path='Reset' element={<Resetpassword />} />
               <Route path='Updatepass' element={<Updatepassword />} />
               <Route path='Login/Profileedit' element={<Profileedit />} />
-              <Route path='search' element={<Search />} />
+              <Route path='/search' element={<Search />} />
+              <Route path='/search/search' element={<Search />} />
               <Route index element={<Home />} />
 
 
